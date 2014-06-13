@@ -1,0 +1,1247 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title i18n="options_pagetitle"></title>
+	<link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="css/options.css">
+	<link rel="stylesheet" href="css/dial.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/checkboxes.js"></script>
+	<script src="js/jscolor.js"></script>
+	<script src="js/json2.js"></script>
+	<script src="js/buy.js"></script>
+	<script src="js/jquery.ui.min.js"></script>
+	<script src="js/tooltip.js"></script>
+	<script src="js/jquery.omniwindow.js"></script>
+	<script src="js/hideShowPassword.js"></script>
+	<script src="js_system/options.js"></script>
+	<script src="js_system/options.base64.js"></script>
+	<script src="js_system/options.export.js"></script>
+	<script src="js_system/common.js"></script>
+	<script src="js_system/db.js"></script>
+	<script src="js_system/themes.json.js"></script>
+	<script src="js_system/options.page.js"></script>
+</head>
+<body>
+
+	<div id="container">
+
+		<header>
+			<ul id="navigation">
+				<li><a class="click-open-extension-page" data-url="newtab.html" title="返回">&laquo; <span i18n="back"></span></a></li>
+			</ul>
+			<div class="wrap">
+				<!--div class="twitter-free-account show-unregistered">
+					<a style="float:left;" class="twitter-share-button tw-referral" target="_blank" href="http://twitter.com/share?via=speeddial2&amp;url=http://speeddial2.com/r/twt08&amp;text=Tell the world what you love about Speed Dial 2 or tweet a screenshot of your new tab page!">Tweet</a>
+					<h3>Tweet about us and become a Pro!</h3>
+					Each month, we give out Premium accounts for the best tweets about us!
+				</div-->
+				<!-- <a target="_blank" href="http://speeddial2.com/changelog" i18n="options_nav_changelog"></a> -->
+			</div>
+
+		</header>
+
+		<div id="main" class="rounded10 dropshadow">
+
+			<input id="savesettingstop" class="save_settings_button btn" type="submit" class="rounded4 alignright" value="保存设置" style="float:right; display:block;" />
+
+			<h1 style="border:0;" i18n="options_options"></h1>
+
+			<div id="options_navigation">
+				<ul>
+					<li><a class="options_tab_link selected" rel="general" i18n="options_nav_options"></a></li>
+					<li><a class="options_tab_link" rel="design" i18n="options_nav_background"></a></li>
+					<li><a class="options_tab_link" rel="dials" i18n="options_nav_customize"></a></li>
+					<li><a class="options_tab_link" rel="sidebars" i18n="options_nav_sidebar"></a></li>
+					<li><a class="options_tab_link" rel="apps" i18n="options_nav_apps"></a></li>
+					<li><a class="options_tab_link" rel="sync" id="sync_indicator" i18n="options_nav_sync"></a></li>
+					<li><a class="options_tab_link" rel="importexport" i18n="options_nav_backup"></a></li>
+					<!--<li class="changelog"><a class="options_tab_link" rel="general" target="_blank" href="http://speeddial2.com/changelog" i18n="options_nav_changelog"></a></li>-->
+				</ul>
+			</div>
+
+		<div id="options">
+
+		<form action="newtab.html" method="post" accept-charset="utf-8">
+
+<!-- GENERAL -->
+
+	<div id="tab_dials" class="options_tab">
+
+			<div id="preview">
+			<ul id="pages">
+				<li class="link">
+					<a>
+						<div class="thumbnail_container"></div>
+						<div class="title" i18n="options_customize_sample_title"></div>
+					</a>
+					<div class="shadow">&nbsp;</div>
+				</li>
+			</ul>
+			</div>
+
+			<div id="explain">
+				<center><img src="images/options.dial-explain.jpg" style="" /></center>
+				<br />
+			</div>
+
+
+			<center>
+				<a class="explain_link click-explain-show" i18n="options_customize_explain">Explain</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a class="explain_link click-explain-hide" i18n="options_customize_preview">Show preview</a>
+			</center>
+
+			<br /><br />
+
+			<table style="width:100%;margin-right:20px;">
+
+					<tr>
+						<td i18n="options_customize_shadow"></td>
+						<td>
+							<div class="radio">
+							<input type="radio" name="options-dropShadow" class="click-preview-shadow" value="none" id="options-dropShadow-none" />
+							<label for="options-dropShadow-none" i18n="options_customize_no_shadow">
+								No shadow
+							</label>
+
+							<input type="radio" name="options-dropShadow" class="click-preview-shadow" value="paper" id="options-dropShadow-1" />
+							<label for="options-dropShadow-1">
+								纸片
+							</label>
+
+							<input type="radio" name="options-dropShadow" class="click-preview-shadow" value="circle" id="options-dropShadow-2" >
+							<label for="options-dropShadow-2">
+								圆形
+							</label>
+
+							<input type="radio" name="options-dropShadow" class="click-preview-shadow" value="drop" id="options-dropShadow-3" />
+							<label for="options-dropShadow-3">
+								下沉
+							</label>
+
+							<input type="radio" name="options-dropShadow" class="click-preview-shadow" value="aside" id="options-dropShadow-4" />
+							<label for="options-dropShadow-4">
+								单边
+							</label>
+
+							<input type="radio" name="options-dropShadow" class="click-preview-shadow" value="box" id="options-dropShadow-5" />
+							<label for="options-dropShadow-5">
+								盒状
+							</label>
+
+							<input type="radio" name="options-dropShadow" class="click-preview-shadow" value="glow" id="options-dropShadow-6" />
+							<label for="options-dropShadow-6">
+								发光
+							</label>
+							</div>
+						</td>
+					</tr>
+					 <tr class="odd">
+						<td i18n="options_customize_rounded_corners"></td>
+						<td>
+
+							<input type="range" min="0" max="12" value="" id="options-corners" />
+							<input type="text" disabled="disabled" name="options-corners-val" value="" id="options-corners-val" /> px
+						</td>
+					</tr>
+					<tr>
+						<td i18n="options_customize_padding"></td>
+						<td>
+							<input type="range" min="0" max="12" step="2" value="" id="options-padding" />
+							<input type="text" disabled="disabled" name="options-padding-val" value="" id="options-padding-val" /> px
+						</td>
+					</tr>
+					<tr class="odd">
+						<td i18n="options_customize_title_position"></td>
+						<td>
+							<div class="radio">
+							<input type="radio" name="options-titlePosition" value="bottom" id="options-titlePosition-inside" class="click-set-value" data-option="options.dialstyle.titleposition" data-value="bottom" />
+							<label for="options-titlePosition-inside" i18n="options_customize_title_position_inside"></label>
+
+							<input type="radio" name="options-titlePosition" value="top" id="options-titlePosition-outside" class="click-set-value" data-option="options.dialstyle.titleposition" data-value="top" />
+							<label for="options-titlePosition-outside" i18n="options_customize_title_position_outside"></label>
+							</div>
+						</td>
+					</tr>
+
+				<tr>
+					<td colspan="2">
+						<h3 class="section" i18n="options_customize_customize_colors"></h3>
+					</td>
+				</tr>
+				</table>
+				<style type="text/css">
+
+					.specify-colors input {
+						display:inline;
+						width:94px;
+						margin:0 3px 0 0;
+					}
+
+				</style>
+				<table width="100%" class="specify-colors">
+				<tr>
+					<td width="25%" i18n="options_customize_background_color"></td>
+					<td width="25%" i18n="options_customize_inner_background_color"></td>
+					<td width="25%" i18n="options_customize_border_colors"></td>
+					<td width="25%" i18n="options_customize_title_color"></td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input class="color" id="options-colors-dialbg">
+						<input class="color" id="options-colors-dialbgover" rel="tooltip" title="Mouseover color" data-placement="bottom">
+					</td>
+					<td align="center">
+						<input class="color" id="options-colors-dialbginner">
+						<input class="color" id="options-colors-dialbginnerover" rel="tooltip" title="Mouseover color" data-placement="bottom">
+					</td>
+					<td align="center">
+						<input class="color" id="options-colors-border">
+						<input class="color" id="options-colors-borderover" rel="tooltip" title="Mouseover color" data-placement="bottom">
+					</td>
+					<td align="center">
+						<input class="color" id="options-colors-title">
+						<input class="color" id="options-colors-titleover" rel="tooltip" title="Mouseover color" data-placement="bottom">
+					</td>
+				</tr>
+				</table>
+
+				<table>
+
+			<tr>
+				<td colspan="2">
+					<h3 class="section" i18n="options_customize_title"></h3>
+				</td>
+			</tr>
+				<tr>
+					<td><label for="options-showTitle" i18n="options_customize_show_title"></label></td>
+					<td><input type="checkbox" class="on_off change-toggle-value" data-option="options.showTitle" id="options-showTitle" name="options-showTitle" value="1" /></td>
+				</tr>
+				<tr class="odd">
+					<td><label for="options-showVisits" i18n="options_customize_show_visits"></label></td>
+					<td><input type="checkbox" class="on_off change-toggle-value" data-option="options.showVisits" id="options-showVisits" name="options-showVisits" value="1" /></td>
+				</tr>
+
+			<tr>
+				<td i18n="options_customize_text_align"></td>
+				<td>
+					<div class="radio">
+
+					<input type="radio" name="options-titleAlign" id="options-titleAlign-left" class="click-preview-title-alignment" data-option="options.dialstyle.titleAlign" data-value="left" />
+					<label for="options-titleAlign-left" i18n="left">
+						Left
+					</label>
+					<input type="radio" name="options-titleAlign" id="options-titleAlign-center" class="click-preview-title-alignment" data-option="options.dialstyle.titleAlign" data-value="center"  />
+					<label for="options-titleAlign-center" i18n="center">
+						Center
+					</label>
+					<input type="radio" name="options-titleAlign" id="options-titleAlign-right" class="click-preview-title-alignment" data-option="options.dialstyle.titleAlign" data-value="right" />
+					<label for="options-titleAlign-right" i18n="Right">
+						Right
+					</label>
+					</div>
+				</td>
+			</tr>
+
+			<tr class="odd">
+				<td>字体</td>
+				<td>
+				<select id="options-fontface" style="width:200px;">
+					<option value="微软雅黑">微软雅黑 (默认)</option>
+					<option value="Nobile, sans-serif;">Nobile</option>
+					<option value='Helvetica,"Helvetica Nueue";arial,sans-serif;'>Helvetica/Helvetica Nueue</option>
+					<option value="Arial, Helvetica, sans-serif;">Arial, Helvetica</option>
+					<option value="'Arial Black', Gadget, sans-serif; ">Arial Black, Gadget</option>
+					<option value="'Bookman Old Style', serif;">Bookman Old Style</option>
+					<option value="'Comic Sans MS', cursive;">Comic Sans MS</option>
+					<option value="Courier, monospace;">Courier</option>
+					<option value="'Courier New', Courier, monospace;">Courier New</option>
+					<option value="Garamond, serif;">Garamond</option>
+					<option value="Georgia, serif;">Georgia</option>
+					<option value="Impact, Charcoal, sans-serif;">Impact, Charcoal</option>
+					<option value="'Lucida Console', Monaco, monospace;">Lucida Console, Monaco</option>
+					<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Lucida Sans Unicode, Lucida Grande</option>
+					<option value="'MS Sans Serif', Geneva, sans-serif;">MS Sans Serif, Geneva</option>
+					<option value="'MS Serif', 'New York', sans-serif;">MS Serif, New York</option>
+					<option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Palatino Linotype, Book Antiqua, Palatino</option>
+					<option value="Symbol, sans-serif;">Symbol</option>
+					<option value="Tahoma, Geneva, sans-serif;">Tahoma, Geneva</option>
+					<option value="'Times New Roman', Times, serif;">Times New Roman, Times</option>
+					<option value="'Trebuchet MS', Helvetica, sans-serif;">Trebuchet MS, Helvetica</option>
+					<option value="Verdana, Geneva, sans-serif;">Verdana, Geneva</option>
+					<option value="Webdings, sans-serif;">Webdings</option>
+					<option value="Wingdings, 'Zapf Dingbats', sans-serif;">Wingdings, Zapf Dingbats</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>字体样式</td>
+				<td>
+					<select id="options-fontstyle">
+						<option value="font-weight:normal;font-style:normal;">正常</option>
+						<option value="font-weight:normal;font-style:italic;">斜体</option>
+						<option value="font-weight:bold;font-style:normal;">粗体</option>
+						<option value="font-weight:bold;font-style:italic;">粗斜体</option>
+					</select>
+				</td>
+			</tr>
+			<tr class="odd">
+				<td>字体大小</td>
+				<td><input type="text" name="" value="" id="options-fontsize" value="" /> px</td>
+			</tr>
+
+				<tr>
+					<td colspan="2">
+						<h3 class="section">自定义 CSS</h3>
+					</td>
+				</tr>
+					<tr>
+						<td colspan="2">
+							输入您自定义的CSS代码，无需填写 &lt;style&gt; 标签<br />
+							注意：该选项只为 <b>高级用户</b> 开放，普通用户请勿填写 :)<br />
+							<textarea id="options-custom-css" rows="10" cols="40"></textarea>
+						</td>
+					</tr>
+
+			</table>
+
+			<br class="clear" />
+
+	</div>
+
+	<div id="tab_general" class="options_tab">
+
+		 <table width="900" id="generalsettings">
+
+				<tr class="odd">
+					<td><label>列数</label></td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="列数" data-content="在一行中显示的拨号数量。行数将根据已保存的拨号数自动计算。"></span>
+						<input type="range" min="2" max="20" step="1" value="" id="options-columns" style="width:350px;" />
+						<input type="text" class="input-range-value" disabled="disabled" name="options-columns-val" value="" id="options-columns-val" /> 列一行
+					</td>
+				</tr>
+				<tr>
+					<td><label>拨号间距</label></td>
+					<td>
+						<input type="range" min="10" max="50" step="2" value="" id="options-dialspacing" style="width:350px;" />
+						<input type="text" class="input-range-value" disabled="disabled" name="options-dialspacing-val" value="" id="options-dialspacing-val" /> px
+					</td>
+				</tr>
+				<tr class="odd">
+					<td><label>拨号排序</label>
+					</td>
+					<td style="width:450px;" id="options.order">
+						<span class="questionmark" data-placement="left" rel="popover" title="拨号排序" data-content="拨号可以根据访问次数自动排序或由您手动排序。如果您选择手动排序，您可以拖动拨号更改他们的位置。"></span>
+
+						<div class="radio">
+
+							<input type="radio" name="order" id="options-order-position" class="click-set-value" data-option="options.order" data-value="position" />
+							<label for="options-order-position">
+								<font i18n="options_options_order_manual"></font> <font i18n="default"></font>
+							</label>
+							<input type="radio" name="order" id="options-order-visits" class="click-set-value" data-option="options.order" data-value="visits" />
+							<label for="options-order-visits" i18n="options_options_order_most_visited">
+								按访问次数排序
+							</label>
+
+						</div>
+
+					</td>
+				</tr>
+				<tr>
+					<td><label for="options-scrollLayout" i18n="options_options_scroll_layout"></label></td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="适应或滚动拨号" data-content="无限滚动拨号替代适应屏幕"></span>
+
+						<div class="radio">
+							<input type="radio" name="options-scrollLayout" id="options-scrollLayout0" class="click-set-value" data-option="options.scrollLayout" data-value="0" />
+							<label for="options-scrollLayout0">
+								适应屏幕
+							</label>
+							<input type="radio" name="options-scrollLayout" id="options-scrollLayout1" class="click-set-value" data-option="options.scrollLayout" data-value="1" />
+							<label for="options-scrollLayout1">
+								允许滚动
+							</label>
+						</div>
+
+					</td>
+				</tr>
+				<tr class="odd">
+					<td><label for="options-centervertically" i18n="options_options_center_vertically"></label></td>
+					<td><input type="checkbox" class="on_off change-toggle-value" data-option="options.centerVertically" name="options-centervertically" id="options-centervertically" value="1" /></td>
+				</tr>
+				<tr>
+					<td><label i18n="options_options_refresh_thumbnail">Refresh thumbnail image</label></td>
+					<td>
+
+						<div class="radio">
+
+						<input type="radio" name="refreshThumbnails" id="options-refreshThumbnails0" class="click-set-value" data-option="options.refreshThumbnails" data-value="0" />
+						<label for="options-refreshThumbnails0">
+							禁用 (默认)
+						</label>
+						<i>或</i>
+
+						<input type="radio" name="refreshThumbnails" id="options-refreshThumbnails2" class="click-set-value" data-option="options.refreshThumbnails" data-value="2" />
+						<label for="options-refreshThumbnails2">
+							每2次访问
+						</label>
+
+
+						<input type="radio" name="refreshThumbnails" id="options-refreshThumbnails5" class="click-set-value" data-option="options.refreshThumbnails" data-value="5" />
+						<label for="options-refreshThumbnails5">
+							每5次访问
+						</label>
+
+						<input type="radio" name="refreshThumbnails" id="options-refreshThumbnails10" class="click-set-value" data-option="options.refreshThumbnails" data-value="10" />
+						<label for="options-refreshThumbnails10">
+							每10次访问
+						</label>
+
+						</div>
+
+
+					</td>
+				</tr>
+				<tr class="odd">
+					<td><label for="options-keepActiveGroup">记住激活的群组</label></td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="保持激活群组" data-content="一个用来在运行时记住和打开最后一次打开的群组的选项。"></span>
+						<input type="checkbox" id="options-keepActiveGroup" name="options-keepActiveGroup" class="on_off change-toggle-value" data-option="options.keepActiveGroup" value="1" />
+					</td>
+				</tr>
+				<tr><td colspan="2">
+					<br />
+					<h3 class="section" style="border:0;">高级选项</h3>
+				</td></tr>
+				<tr class="odd">
+					<td><label for="options-showAddButton">显示 <img src="images/newtab.plus.png" width="24" /> 按钮？</label></td>
+					<td><input type="checkbox" id="options-showAddButton" name="options-showAddButton" class="on_off change-toggle-value" data-option="options.showAddButton" value="1" /></td>
+				</tr>
+				<tr>
+					<td><label for="options-showOptionsButton">显示选项按钮？</label></td>
+					<td><input type="checkbox" id="options-showOptionsButton" name="options-showOptionsButton" class="on_off change-toggle-value" data-option="options.showOptionsButton" value="1" /></td>
+				</tr>
+				<tr class="odd">
+					<td>
+						<label for="options-alwaysNewTab">在新标签页中打开链接？</label>
+					</td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="在新标签页中打开链接" data-content="开启选项，在新标签页中打开所有链接。如果开启，用鼠标中键点击或Ctrl+点击会在当前标签页中打开，而不是新标签页。"></span>
+						<input type="checkbox" id="options-alwaysNewTab" name="options-alwaysNewTab"
+						class="on_off change-toggle-value" data-option="options.alwaysNewTab" value="1" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="options-highlight">突出显示经常访问的拨号？</label>
+					</td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="经常访问的网站" data-content="Speedial2 将追踪您每天的访问习惯并记录您上午、中午、下午和晚上访问的页面。开启该选项后，您会在当前时段经常访问的三个拨号上看到一个红色的折角。"></span>
+						<input type="checkbox" id="options-highlight" name="options-highlight" class="on_off change-toggle-value" data-option="options.highlight" value="1" />
+					</td>
+				</tr>
+				<tr class="odd">
+					<td><label>宽度设置</label></td>
+					<td>
+						<input type="range" min="50" max="95" value="" id="options-dialspace" style="width:350px"/>
+						<input type="text" disabled="disabled" name="options-dialspace-val" value="" id="options-dialspace-val" style="border:0;background:transparent;width:25px;margin-left:15px;padding:0;margin-right:0px;" /> % 的屏幕宽度
+					</td>
+				</tr>
+				<tr>
+					<td><label for="options-thumbnailRatio">自定义缩略图比例 (默认:1)</label></td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="适应或滚动拨号" data-content="允许您自定义拨号的比例。"></span>
+						<input type="range" min="0.7" max="1.8" step="0.01" value="" id="options-thumbnailRatio" style="width:350px;" />
+						<input type="text" class="input-range-value" disabled="disabled" name="options-thumbnailRatio-val" value="" id="options-thumbnailRatio-val" />
+						<a class="explain_link click-reset-thumbnail-ration">重置为默认</a>
+					</td>
+				</tr>
+				<tr class="odd">
+					<td>
+						<label>如何填充LOGO？</label>
+					</td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="如何填充自定义LOGO" data-content="如何在缩略图区域中显示您自定义的图片？"></span>
+						<div class="radio">
+
+							<input type="radio" name="centerThumbnailsVertically" id="options-centerThumbnailsVertically1" class="click-set-value" data-option="options.centerThumbnailsVertically" data-value="1" />
+							<label for="options-centerThumbnailsVertically1">填满区域（默认）</label>
+
+							<input type="radio" name="centerThumbnailsVertically" id="options-centerThumbnailsVertically2" class="click-set-value" data-option="options.centerThumbnailsVertically" data-value="2" />
+							<label for="options-centerThumbnailsVertically2">按100%宽度填充并居中</label>
+
+							<input type="radio" name="centerThumbnailsVertically" id="options-centerThumbnailsVertically0" class="click-set-value" data-option="options.centerThumbnailsVertically" data-value="0" />
+							<label for="options-centerThumbnailsVertically0">按100%宽度填充</label>
+
+							<input type="radio" name="centerThumbnailsVertically" id="options-centerThumbnailsVertically3" class="click-set-value" data-option="options.centerThumbnailsVertically" data-value="3" />
+							<label for="options-centerThumbnailsVertically3">按原始大小填充</label>
+
+						</div>
+
+					</td>
+				</tr>
+				<tr>
+					<td><label>缩略图质量</label>
+					</td>
+					<td style="vertical-align:top!important">
+						<span class="questionmark" data-placement="left" rel="popover" title="缩略图质量" data-content="我们建议如果拨号数量小于10选择高品质，10-20之间选择中等品质，超过20个拨号选择低品质。<b>请注意 缩略图品质会影响新标签的载入时间。</b>"></span>
+
+						<div class="radio">
+						<input type="radio" name="thumbnail_quality" id="options-thumbquality-high" class="click-set-value" data-option="options.thumbnailQuality" data-value="high" />
+						<label for="options-thumbquality-high">
+							高
+						</label>
+						<input type="radio" name="thumbnail_quality" id="options-thumbquality-medium" class="click-set-value" data-option="options.thumbnailQuality" data-value="medium" />
+						<label for="options-thumbquality-medium">
+							中
+						</label>
+						<input type="radio" name="thumbnail_quality" id="options-thumbquality-low" class="click-set-value" data-option="options.thumbnailQuality" data-value="low" />
+						<label for="options-thumbquality-low">
+							低
+						</label>
+						</div>
+
+					</td>
+				</tr>
+				<tr class="odd">
+					<td>
+						<label for="options-showContextMenu">在浏览器的右键菜单中显示？</label>
+					</td>
+					<td>
+						<span class="questionmark" data-placement="left" rel="popover" title="右键菜单" data-content="该菜单可将当前打开页面或所有打开页面快速添加到快速拨号。 <b>您所做的更改会在下次重新启动 Google Chrome 浏览器时生效。</b>"></span>
+						<span style="float:right!important;padding:6px 12px;color:#999;font-size:12px;" >需要重新启动</span>
+						<input type="checkbox" id="options-showContextMenu" name="options-showContextMenu" class="on_off change-toggle-value" data-option="options.showContextMenu" value="1" />
+					</td>
+				</tr>
+			</table>
+	</div>
+
+<!-- DESIGN -->
+
+	<div id="tab_design" class="options_tab">
+
+		<ul class="tabs">
+			<li rel="background_images" class="selected">主题</li>
+			<li rel="background_file">从电脑中选择图片</li>
+			<li rel="background_custom">自定义地址</li>
+			<li rel="background_positioning">自定义背景</li>
+		</ul>
+
+		<div id="background_file" class="tab" style="display:none">
+
+				<div class="show-premium">
+					<div class="progress-bar hidden"><div class="bar"><div class="fill"></div></div></div>
+					<div style="padding:20px 0" class="ac">
+						<p class="msg done hidden">
+							你的背景已成功设置。如果你想设置背景大小或平铺方式等请到 <a rel="background_positioning">其他背景选项</a>。
+						</p>
+						<p><b>从你的电脑中选择图片</b><br><br></p>
+						<button class="btn blue" id="logo-upload">选择文件</button>
+						<input type="file" id="upload-logo" accept="image/*" class="hidden" />
+					</div>
+				</div>
+				<div class="hide-premium ac">
+					<p>该功能仅对 <a class="click-tab-sync" title="Become a Pro to unlock this feature">Pro 用户</a> 开放。</p>
+				</div>
+
+		</div>
+
+		<div id="background_custom" class="tab" style="display:none">
+
+			<h3 class="section">
+				背景图片地址
+			</h3>
+			<p>
+				<input placeholder="背景图片地址" type="text" value="" id="options-background" style="padding:12px 20px;" /> &nbsp; <a class="click-reset-background">移除背景</a>
+			</p>
+			<p>
+				<br>
+				<b>提示：</b>
+				您可以使用图片空间提供商上传图片，比如 <a href="http://imgur.com">imgur.com</a>。
+			</p>
+
+			<br class="clear" />
+
+		</div>
+
+		<div id="background_positioning" class="tab" style="display:none">
+
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td>
+						<p>
+							<b>背景色</b>
+						</p>
+						<input class="color" id="options-colors-bg" style="margin:0;padding-right:32px; width:112px;" />
+					</td>
+					<td>
+						<p>
+							<b>背景平铺</b>
+						</p>
+
+						<select id="options-repeatbackground" style="width:190px;">
+							<option value="no-repeat">不重复</option>
+							<option value="repeat">重复</option>
+							<option value="repeat-x">水平平铺</option>
+							<option value="repeat-y">垂直平铺</option>
+						</select>
+
+					</td>
+					<td>
+						<p>
+							<b>背景大小</b>
+						</p>
+						<select id="options-backgroundSize" style="width:200px;">
+							<option value="original">保持原始大小</option>
+							<option value="cover">覆盖</option>
+							<option value="contain">包含</option>
+						</select>
+					</td>
+					<td>
+						<p>
+							<b>背景位置</b>
+						</p>
+
+						<select id="options-backgroundPosition" style="width:200px;">
+							<option value="left top">左上（默认）</option>
+							<option value="center top">向上居中</option>
+							<option value="right top">右上</option>
+							<option value="left center">向左居中</option>
+							<option value="center center">居中</option>
+							<option value="right center">向右居中</option>
+							<option value="left bottom">左下</option>
+							<option value="center bottom">向下居中</option>
+							<option value="right bottom">右下</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+		<div id="background_images" class="tab">
+
+			<div id="themes"></div>
+
+			<div class="ac">
+				<br>
+				<p>
+					<a class="btn blue btn-large" id="show-more-patterns">更多背景...</a>
+				</p>
+				<br>
+				<p class="grey info">这些漂亮的图案和背景部分来自 <a target="_blank" title="subtlepatterns.com" href="http://subtlepatterns.com/">www.subtlepatterns.com</a> by <a target="_blank" title="Atle Mo" href="http://atlemo.com/">Atle Mo</a> <br>和 <a href="http://thepatternlibrary.com/">Pattern Library by <a href="http://twitter.com/twholman">Tim Holman</a> &amp; <a href="http://twitter.com/claudioguglieri">Claudio Guglieri</a> ~</p>
+			</div>
+		</div>
+		<br class="clear" />
+
+	</div>
+
+<!-- SIDEBAR -->
+
+	<div id="tab_sidebars" class="options_tab">
+
+		 <table width="900" id="generalsettings">
+				<tr>
+					<td>
+						<label for="options-sidebar">启用侧边栏？</label>
+						</td>
+					<td valign="middle"><input type="checkbox" id="options-sidebar" name="options-sidebar" class="on_off change-toggle-value" data-option="options.sidebar" value="1" /></td>
+				</tr>
+				<tr class="odd">
+					<td>
+						<label>如何激活侧边栏？</label>
+					</td>
+					<td style="width:450px;" id="options.order">
+						<div class="radio">
+						<input type="radio" name="sidebaractivation" id="options-sidebaractivation-position" class="click-set-value" data-option="options.sidebaractivation" data-value="position" />
+						<label for="options-sidebaractivation-position">
+							鼠标移至屏幕右侧
+						</label>
+						<input type="radio" name="sidebaractivation" id="options-sidebaractivation-scroll" class="click-set-value" data-option="options.sidebaractivation" data-value="scroll" />
+						<label for="options-sidebaractivation-scroll">
+							鼠标滚轮向下滚动
+						</label>
+
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="options-sidebar-showhistory">显示最近关闭的标签页？</label>
+						</td>
+					<td valign="middle"><input type="checkbox" id="options-sidebar-showhistory" name="options-sidebar-showhistory" class="on_off change-toggle-value" data-option="options.sidebar.showHistory" /></td>
+				</tr>
+				<tr class="odd">
+					<td>
+						<label for="options-sidebar-showapps">显示应用程序？</label>
+						</td>
+					<td valign="middle"><input type="checkbox" id="options-sidebar-showapps" name="options-sidebar-showapps" class="on_off change-toggle-value" data-option="options.sidebar.showApps" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<br />
+						<hr />
+						<br />
+						<center>
+							<b style="font-size:20px;">书签</b><br /><br />
+							<div class="radio">
+
+								<input id="bookmarks-provider-none" type="radio" name="options.bookmarks.provider" />
+								<label for="bookmarks-provider-none">无</label>
+
+								<input id="bookmarks-provider-chrome" type="radio" name="options.bookmarks.provider" />
+								<label for="bookmarks-provider-chrome">Chrome 书签</label>
+
+								<input id="bookmarks-provider-delicious" type="radio" name="options.bookmarks.provider" />
+								<label for="bookmarks-provider-delicious">Delicious 美味书签</label>
+
+								<input id="bookmarks-provider-google" type="radio" name="options.bookmarks.provider" />
+								<label for="bookmarks-provider-google">Google 书签</label>
+
+								<input id="bookmarks-provider-pinboard" type="radio" name="options.bookmarks.provider" />
+								<label for="bookmarks-provider-pinboard">Pinboard.in 书签</label>
+
+							</div>
+
+							<div class="bookmarks-provider" id="bookmarks-provider-delicious-settings">
+								<table>
+								<tr>
+									<td>
+										<label for="options-sidebar-delicious-username">Delicious 帐号？</label>
+										</td>
+									<td valign="middle">
+										<input type="text" value="" id="options-sidebar-delicious-username" name="options-sidebar-delicious-username" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label for="options-useDeliciousShortcut">使用 Alt+D 保存新书签？</label>
+									</td>
+									<td valign="middle">
+										<input type="checkbox" id="options-useDeliciousShortcut" name="options-useDeliciousShortcut" class="on_off change-toggle-value" data-option="options.useDeliciousShortcut" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>总是显示这些标签：</label>
+										<!--<span>Enter tags you always want to be shown<br />separate by comma, f.e: jquery,design,css</span>-->
+										</td>
+										<td valign="middle">
+											<input type="text" value="" id="options-sidebar-delicious-favoriteTags" />
+									</td>
+								</tr>
+								</table>
+
+							</div>
+
+							<div class="bookmarks-provider" id="bookmarks-provider-pinboard-settings">
+								<table>
+								<tr>
+									<td>
+										<label for="options-sidebar-pinboard-username">Pinboard 帐号？</label>
+										</td>
+									<td valign="middle">
+										<input type="text" value="" id="options-sidebar-pinboard-username" name="options-sidebar-pinboard-username" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label for="options-usePinboardShortcut">使用 Alt+D 保存新书签？</label>
+									</td>
+									<td valign="middle">
+										<input type="checkbox" id="options-usePinboardShortcut" name="options-usePinboardShortcut" class="on_off change-toggle-value" data-option="options.usePinboardShortcut" />
+									</td>
+								</tr>
+								</table>
+
+							</div>
+
+							<div class="bookmarks-provider" id="bookmarks-provider-google-settings">
+								<table>
+								<tr>
+									<td>
+										<label for="options-useGoogleBookmarksShortcut">使用 Alt+D 保存新书签？</label>
+									</td>
+									<td valign="middle">
+										<input type="checkbox" id="options-useGoogleBookmarksShortcut" name="options-useGoogleBookmarksShortcut" class="on_off change-toggle-value" data-option="options.useGoogleBookmarksShortcut" />
+									</td>
+								</tr>
+								</table>
+							</div>
+
+
+							<div class="bookmarks-provider" id="bookmarks-provider-chrome-settings">
+								<table>
+								<tr>
+									<td>
+										<label for="options-sidebar-showbookmarksURL">列出地址？</label>
+										</td>
+									<td valign="middle"><input type="checkbox" id="options-sidebar-showbookmarksURL" name="options-sidebar-showbookmarksURL" class="on_off change-toggle-value" data-option="options.sidebar.showBookmarksURL" /></td>
+								</tr>
+								</table>
+							</div>
+
+						</center>
+					</td>
+				</tr>
+				</table>
+
+
+	</div>
+
+<!-- IMPORT/EXPORT -->
+
+	<div id="tab_importexport" class="options_tab">
+
+		<div style="width:435px;float:left;font-size:16px;line-height:24px;margin-right:20px">
+			<a class="btn blue block move-settings" data-direction="export">导出设置</a>
+			<p>这部分允许您轻松的导入/导出您的拨号和设置到其他计算机。导出并备份您的设置请点 <b>导出设置</b> 按钮并复制所有生成的文本。</p>
+		</div>
+		<div style="width:435px;float:left;font-size:16px;line-height:24px;">
+			<a class="btn blue block move-settings" data-direction="import">导入设置</a>
+			<p>导入您的设置，请点击 <b>导入设置</b> 按钮并粘贴您以前保存的文本。 注意：导入操作将覆盖您的拨号和已保存的选项。</p>
+		</div>
+		<br class="clear" /><br class="clear" />
+
+		<div id="export">
+			<p>
+				<b>这些是您导出的设置</b> - 复制并在其他计算机通过“导入设置”按钮粘贴。
+			</p>
+			<textarea id="export_textarea" rows="20" cols="100"></textarea>
+			<p class="right">
+				<a class="btn grey block" id="download">保存为文件</a>
+			</p>
+		</div>
+
+		<div id="import">
+			<p>
+				<b>粘贴设置</b> 您以前通过“导出设置”按钮导出的。
+			</p>
+			<textarea id="import_textarea" rows="15" cols="100"></textarea><br class="clear" /><br class="clear" />
+			<a class="btn btn-small blue" id="import-settings-button">导入设置</a>
+		</div>
+
+	</div>
+
+<!-- END:IMPORT/EXPORT -->
+
+<!-- APPS -->
+
+	<div id="tab_apps" class="options_tab">
+
+		 <table width="900" id="generalsettings">
+				<tr>
+					<td>
+						<label>显示应用面板？</label>
+						<span>您可以在独立的面板中显示您已安装的应用程序 <br />或者在侧边栏里以列表的方式显示（<i>查看 侧边栏部分</i>）。</span>
+						</td>
+					<td valign="middle"><input type="checkbox" id="options-apps-show" class="on_off change-toggle-value" data-option="options.apps.show" value="1" /></td>
+				</tr>
+				<tr class="odd">
+					<td>
+						<label>面板位置</label>
+					</td>
+					<td style="width:450px;">
+						<div class="radio">
+							<input type="radio" name="options-apps-position" id="options-apps-position-top" class="click-set-value" data-option="options.apps.position" data-value="top" />
+							<label for="options-apps-position-top">
+								顶部
+							</label>
+
+							<input type="radio" name="options-apps-position" id="options-apps-position-bottom" class="click-set-value" data-option="options.apps.position" data-value="bottom"  />
+							<label for="options-apps-position-bottom">
+								底部
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>面板主题</label>
+					</td>
+					<td style="width:450px;">
+						<div class="radio">
+
+						<input type="radio" name="options-apps-theme" id="options-apps-theme-light" class="click-set-value" data-option="options.apps.theme" data-value="light" />
+						<label for="options-apps-theme-light">
+							浅色
+						</label>
+
+						<input type="radio" name="options-apps-theme" id="options-apps-theme-dark" class="click-set-value" data-option="options.apps.theme" data-value="dark" />
+						<label for="options-apps-theme-dark">
+							深色
+						</label>
+
+						<input type="radio" name="options-apps-theme" id="options-apps-theme-transparent" class="click-set-value" data-option="options.apps.theme" data-value="transparent" />
+						<label for="options-apps-theme-transparent">
+							透明
+						</label>
+
+						</div>
+					</td>
+				</tr>
+				<tr class="odd">
+					<td>
+						<label>图标尺寸</label>
+					</td>
+					<td style="width:450px;">
+						<div class="radio">
+						<input type="radio" name="options-apps-iconsize" id="options-apps-iconsize-small" class="click-set-value" data-option="options.apps.iconsize" data-value="small" />
+						<label for="options-apps-iconsize-small">
+							小
+						</label>
+						<input type="radio" name="options-apps-iconsize" id="options-apps-iconsize-medium" class="click-set-value" data-option="options.apps.iconsize" data-value="medium" />
+						<label for="options-apps-iconsize-medium">
+							中
+						</label>
+						<input type="radio" name="options-apps-iconsize" id="options-apps-iconsize-large" class="click-set-value" data-option="options.apps.iconsize" data-value="large" />
+						<label for="options-apps-iconsize-large">
+							大
+						</label>
+						<input type="radio" name="options-apps-iconsize" id="options-apps-iconsize-extrasmall" class="click-set-value" data-option="options.apps.iconsize" data-value="extrasmall" />
+						<label for="options-apps-iconsize-extrasmall">
+							仅显示图标
+						</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>图标对齐方式</label>
+					</td>
+					<td style="width:450px;">
+						<div class="radio">
+						<input type="radio" name="options-apps-align" id="options-apps-align-left" class="click-set-value" data-option="options.apps.align" data-value="left" />
+						<label for="options-apps-align-left">
+							左对齐
+						</label>
+						<input type="radio" name="options-apps-align" id="options-apps-align-center" class="click-set-value" data-option="options.apps.align" data-value="center"  />
+						<label for="options-apps-align-center">
+							居中对齐
+						</label>
+						<input type="radio" name="options-apps-align" id="options-apps-align-right" class="click-set-value" data-option="options.apps.align" data-value="right"  />
+						<label for="options-apps-align-right">
+							右对齐
+						</label>
+						</div>
+					</td>
+				</tr>
+
+			</table><hr />
+
+			<div>
+				<h4><a href="http://www.google.com/support/chrome_webstore/bin/answer.py?hl=en&answer=1050586&topic=1212375">了解更多关于 Chrome 应用程序的信息</a></h4>
+			</div>
+
+
+	</div>
+
+	<div id="tab_sync" class="options_tab">
+
+		<div class="hide-premium show-unregistered">
+
+			<table id="sync_account" class="sync_account">
+
+					<tr>
+						<td><label>Sync username or e-mail</label></td>
+						<td><label>Password</label></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="" id="options-sync-username" value="" placeholder="Enter your username or e-mail" /></td>
+						<td><input type="password" name="" id="options-sync-password" value="" placeholder="Enter your sync password" /></td>
+						<td width="200">
+							<a class="btn blue" id="sync">Sign in</a>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top!important;text-align:right;padding-right:20px;">
+						</td>
+						<td colspan="2">
+							<a target="_blank" class="grey" href="http://speeddial2.com/account/forgot_password">Forgot your password?</a>
+						</td>
+					</tr>
+
+			</table>
+			<div>
+
+				<center id="register_account">
+					Sign in or &nbsp;<a class="btn btn-large become-pro">Become a Pro!</a>
+				</center>
+
+				<div id="setup_sync">
+
+					<a class="become-pro"><img src="images/options.sync.preview.png" /></a>
+
+					<div>
+						<p id="sync_info">
+							If you like Speed Dial 2, you’ll <span><b>love</b></span> to have it always with you!
+						</p>
+						<ul id="sync_features">
+							<li><span>Synchronization.</span></li>
+							<li><span>Online</span> access to your <br />bookmarks at <a href="http://my.speeddial2.com" target="_blank">http://my.speeddial2.com</a>. </li>
+							<li>Optimized for <span>mobile</span> devices. </li>
+							<li><span>Backup of your data.</span></li>
+						</ul>
+						<p id="sync_price"><b>$2.99</b></p>
+						<p id="sync_price_info">
+							for a lifetime account.<br /><br />
+						</p>
+					</div>
+
+				</div>
+
+				<br class="clear" />
+
+				<div id="explain_sync">
+
+					<h2>How does it work?</h2>
+
+					<div id="left">
+
+						<h3>Sync</h3>
+						<p>
+							With Speed Dial Pro, you bookmarks and settings are being automatically synchronized to our server <a target="_blank" href="http://speeddial2.com">speeddial2.com</a>.
+							This means your extension with all dials, groups and settings will be synchronized across different computers right after you provide you sync credentials (username and password).
+							Synchronization with our server takes place every time you start a browser and any other changes (creating new bookmarks or group) are immediatelly replicated online. <br /><br />
+						</p>
+
+					</div>
+					<div id="right">
+
+						<h3>Mobile / online access</h3>
+						<p>
+							Since your groups and bookmarks will be available online, you can access them from any other browser or mobile device by logging in at <b><a target="_blank" href="http://my.speeddial2.com">my.speeddial2.com</a></b>.
+							They're optimized to be viewed on mobile devices and tablets as well as desktop computers. To quickly access your bookmarks from your mobile device, set Speed Dial 2 as a homepage or pin it as a bookmark on your Homescreen.
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="show-premium user-account">
+
+			<div class="user-avatar-container">
+				<img class="user-avatar" src="images/options.user.png" />
+			</div>
+			<table width="550" class="sync_account">
+
+					<tr>
+						<td><label></label></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td width="440">
+							<h2>
+								You are signed in as <a target="_blank" href="http://my.speeddial2.com" class="sync-status-username"></a>.
+							</h2>
+							<span id="sync_status"></span>
+							<small><a target="_blank" href="http://speeddial2.com/login">See your bookmarks online</a></small>
+						</td>
+						<td valign="top" width="140">
+							<a class="btn blue" id="logout" style="margin:10px;">Sign out</a>
+						</td>
+					</tr>
+
+			</table>
+
+			<div class="sync-status">
+
+				<h2>All your data in the cloud!</h2>
+				<table width="460">
+					<tr>
+						<td valign="top" width="200">
+							<h3>Your sync</h3>
+							<div class="sync-status-text">
+								<p class="sync-status-bookmarks"></p>
+								<p class="sync-status-groups"></p>
+							</div>
+						</td>
+						<td valign="top">
+							<h3>Backup history</h3>
+							<p>This feature is coming soon. </p>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+
+
+		</div>
+
+		<br class="clear" />
+
+	</div>
+
+<!-- SUBMIT -->
+
+			</form>
+
+			</div>
+			<h1></h1>
+			<input class="save_settings_button rounded4 alignright btn" type="submit" class="" value="保存设置" />
+
+			<div style="float:left;">
+				<a href="http://service.weibo.com/share/share.php?url=http%3A%2F%2Fc7sky.com%2Fchrome-speeddial2-cn.html&title=&pic=http://ww1.sinaimg.cn/large/60557da1gw1eb2an0v5hrj20zk0go0w3.jpg" target="_blank"><img src="http://www.sinaimg.cn/blog/developer/icon/publish_button_24.gif" alt="" /></a>
+				<a href="http://share.v.t.qq.com/index.php?c=share&a=index&title=%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%20Google%20Chrome%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E9%80%9F%E6%8B%A8%E5%8F%B7%E6%89%A9%E5%B1%95%20-%20Speed%20Dial%202%20%E4%B8%AD%E6%96%87%E7%89%88%20%7C%20%E5%B0%8F%E5%BD%B1%E5%BF%97&url=http%3A%2F%2Fc7sky.com%2Fchrome-speeddial2-cn.html&pic=http://ww1.sinaimg.cn/large/60557da1gw1eb2an0v5hrj20zk0go0w3.jpg" target="_blank"><img src="http://mat1.gtimg.com/app/opent/images/wiki/resource/button24.png" alt="" /></a>
+				<a href="http://widget.renren.com/dialog/share?resourceUrl=http%3A%2F%2Fc7sky.com%2Fchrome-speeddial2-cn.html&srcUrl=http%3A%2F%2Fc7sky.com%2Fchrome-speeddial2-cn.html&title=%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%20Google%20Chrome%20%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E9%80%9F%E6%8B%A8%E5%8F%B7%E6%89%A9%E5%B1%95%20-%20Speed%20Dial%202%20%E4%B8%AD%E6%96%87%E7%89%88%20%7C%20%E5%B0%8F%E5%BD%B1%E5%BF%97&pic=http://ww1.sinaimg.cn/large/60557da1gw1eb2an0v5hrj20zk0go0w3.jpg&description=Speed Dial 2 是一个简洁高效的快速拨号扩展程序，快速访问你的应用程序、书签和历史记录。" target="_blank"><img src="http://dev.renren.com/views/website/inc/images/share05.png" alt="" /></a>
+				<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http%3A%2F%2Fc7sky.com%2Fchrome-speeddial2-cn.html&pics=http://ww1.sinaimg.cn/large/60557da1gw1eb2an0v5hrj20zk0go0w3.jpg" target="_blank"><img src="http://bcs.duapp.com/picstore/FojDGBZexT.png" alt="" /></a>
+			</div>
+		</div>
+
+			<div style="clear:both"></div>
+
+
+<!-- FOOTER -->
+
+		<div id="support">
+			<div>
+			<h1 style="margin:0;">试试 <span style="color:#72DBD8">Speed Dial 2 Pro</span></h1>
+			<p style="font-size:16px;color:#eee;line-height:26px;">
+				- 在不同的电脑间同步您的书签和设置。<br />
+				- 在任何地方访问您的书签。<br />
+				- 与任何移动设备协同工作 - 无论是手机还是平板电脑！<br /><br />
+				<a class="btn brown tw-referral" href="http://twitter.com/share?via=speeddial2&amp;url=http://speeddial2.com/r/twt08&amp;text=Try Speed Dial 2, the best New tab page for Google Chrome @speeddial2" style="color:white!important" rel="tooltip" data-placement="bottom" title="我们每月选取最佳 tweets 赠送收费账户！">Tweet 并获取 Pro 账户</a>
+				<a class="btn brown click-tab-sync">了解更多</a>
+			</p>
+			<br /><br />
+			<p>
+				<a target="_blank" href="http://speeddial2.com/support/">了解更多关于即将发布的功能</a><br />
+				<a target="_blank" href="http://speeddial2.com/support/">意见反馈</a><br />
+			</p>
+			</div>
+
+			<br /><br /><br />
+
+		</div>
+
+		<footer>中文版 <span>&hearts;</span> by <a href="http://c7sky.com/" target="_blank" id="virae">小影</a></footer>
+
+	</div> <!--! end of #container -->
+
+	<!--! plugin component dialogs -->
+	<div id="message"></div>
+
+	<!-- import settings warning modal -->
+	<div class="modal state-closed" id="import-settings-warning">
+		<div class="modal-content">
+			<h3>警告</h3>
+			<div>
+				<p class="hide-premium">
+					本操作将覆盖您的拨号和已保存的选项。
+				</p>
+				<p class="show-premium">
+					Besides changes to your local computer, importing your setting while you are signed in will cause bookmarks and groups to be replaced on our <b>sync server too</b>! <br>
+				</p>
+				<p>
+					<label>
+						<input type="checkbox" />
+						我知道我在做什么。
+					</label>
+				</p>
+				<p>
+					<button class="btn white modal-close">取消</button>
+					<button type="submit" class="btn white modal-close">继续</button>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- append or rewrite bookmarks? -->
+	<div class="modal modal-info state-closed" id="sync-conflict-warning">
+		<div class="modal-content">
+			<h3>Set up your sync</h3>
+			<div>
+				<p>
+					It seems this is the first time you're connecting this computer to our sync.
+					Would you like to keep your existing bookmarks and groups and merge them with your sync?
+				</p>
+				<p>
+					<label>
+						<input name="sync-preference" type="radio" value="2" />
+						Merge bookmarks and groups with the rest in my sync
+					</label>
+					<br>
+					<label>
+						<input name="sync-preference" type="radio" value="1" />
+						Overwrite bookmarks with sync
+					</label>
+				</p>
+				<p>
+					<br>
+					<button class="btn blue modal-close">Cancel</button>
+					<button class="btn blue modal-close" type="submit">Continue</button>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- append or rewrite bookmarks? -->
+	<div class="modal modal-info state-closed" id="become-a-pro-modal">
+		<div class="modal-content">
+			<h3>How would you like to pay?</h3>
+			<br>
+			<div class="ac">
+				Awesome! You're just one step away from becoming a Pro. <br>Please select your preferred payment method. 
+			</div>
+			<table style="margin:0 auto 20px auto;">
+				<tr>
+					<td>
+						<a id="pay-with-google">
+							<img id="pay-with-google" src="images/options.buy-with-google.png" alt="" width="200" />
+						</a>
+					</td>
+					<td>or</td>
+					<td>
+						<a id="pay-with-paypal">
+							<img id="pay-with-paypal" src="images/options.buy-with-paypal.png" alt="" width="200" />
+						</a>
+					</td>
+				</tr>
+			</table>
+			<br>
+		</div>
+	</div>
+
+	<!-- append or rewrite bookmarks? -->
+	<div class="modal modal-info state-closed" id="create-user-account">
+		<div class="modal-content">
+			<h3>Set up your account</h3>
+			<div>
+				<form>
+					<label>
+						<span>Your e-mail address</span>
+						<input type="email" id="user-account-email" placeholder="Enter your email" />
+					</label>
+
+					<label>
+						<span>Choose password</span>
+						<input type="password" id="user-account-password" placeholder="Enter your password" />
+					</label>
+					<span class="error-message"></span>
+					<button id="create-user-account-submit" type="submit" class="btn btn-large block">Continue</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- append or rewrite bookmarks? -->
+	<div class="modal modal-info state-closed" id="payment-complete">
+		<div class="modal-content">
+			<h3>Thank you!</h3>
+			<div>
+				<h4>Welcome to Speed Dial 2 Pro!</h4>
+				<p>
+					All your settings and bookmarks will be synchronized and safely backed up! Please click the button below to allow your initial sync. 
+				</p>
+				<button type="submit" class="btn btn-large blue block">Start initial synchronization</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-overlay state-closed"></div>
+
+</body></html>

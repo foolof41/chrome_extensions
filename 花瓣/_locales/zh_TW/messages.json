@@ -1,0 +1,137 @@
+{
+   "about": {
+      "message": "關於花瓣網"
+   },
+   "access_denied": {
+      "message": "訪問被拒絕"
+   },
+   "arrow": {
+      "message": "箭頭"
+   },
+   "authorization": {
+      "message": "授權"
+   },
+   "blur": {
+      "message": "模糊"
+   },
+   "cancel": {
+      "message": "取消"
+   },
+   "captureArea": {
+      "message": "選擇區域截圖"
+   },
+   "captureFullpage": {
+      "message": "整張網頁截圖"
+   },
+   "captureViewport": {
+      "message": "可視區域截圖"
+   },
+   "color": {
+      "message": "顔色"
+   },
+   "crop": {
+      "message": "裁剪"
+   },
+   "editPageTitle": {
+      "message": "網頁截圖採集到花瓣"
+   },
+   "ellipse": {
+      "message": "圓"
+   },
+   "extDescription": {
+      "message": "這個擴充功能可以讓你方便地從任意網站上採集喜歡的圖片、視頻或者網頁截圖到花瓣網(huaban.com)上。這是花瓣網官方(huaban.com)提供的擴充功能。"
+   },
+   "extName": {
+      "message": "花瓣網頁收藏工具"
+   },
+   "feedback": {
+      "message": "反饋建議"
+   },
+   "feedbackText": {
+      "message": "對這個插件不滿意嗎？點擊這裏給我們一些建議吧"
+   },
+   "hidePinButton": {
+      "message": "隱藏"
+   },
+   "hideShortcut": {
+      "message": "關閉截圖快捷鍵"
+   },
+   "http_413": {
+      "message": "圖片太大"
+   },
+   "invalid_grant": {
+      "message": "無效的授權"
+   },
+   "line": {
+      "message": "直線"
+   },
+   "minImageSide": {
+      "message": "圖片最小邊長"
+   },
+   "network_err": {
+      "message": "網路錯誤"
+   },
+   "ok": {
+      "message": "確認"
+   },
+   "pinAllText": {
+      "message": "採集圖片/視頻"
+   },
+   "preferences": {
+      "message": "偏好"
+   },
+   "radius_rect": {
+      "message": "圓角矩形"
+   },
+   "rect": {
+      "message": "矩形"
+   },
+   "remove_auth": {
+      "message": "移除授權"
+   },
+   "save": {
+      "message": "保存到本地"
+   },
+   "shoppingName": {
+      "message": "花瓣禮物"
+   },
+   "shortcutSetting": {
+      "message": "快捷鍵設置"
+   },
+   "showPinButton": {
+      "message": "顯示"
+   },
+   "showShortcut": {
+      "message": "開啟截圖快捷鍵"
+   },
+   "siteName": {
+      "message": "花瓣網"
+   },
+   "size_huge": {
+      "message": "特大"
+   },
+   "size_large": {
+      "message": "大"
+   },
+   "size_normal": {
+      "message": "正常"
+   },
+   "size_small": {
+      "message": "小"
+   },
+   "text": {
+      "message": "標注文字"
+   },
+   "toggleBtnText": {
+      "message": "顯示採集按鈕"
+   },
+   "undo": {
+      "message": "撤消"
+   },
+   "upload": {
+      "message": "采集到花瓣"
+   },
+   "visit": {
+      "message": "訪問"
+   }
+}

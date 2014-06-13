@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Huaban Collector</title>
+    <meta charset="utf-8">
+    <meta name="copyright" content="huaban.com"/>
+    <link href="css/edit.css" rel="stylesheet" type="text/css">
+    <script src="js/utils.js"></script>
+    <script src="js/huaban.js"></script>
+    <script src="js/upload_ui.js"></script>
+    <script src="js/ajax.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="toolbar">
+        <ul>
+          <li id="btn_undo">
+            <span class="undo"></span>
+            <span id="t_undo">撤消</span>
+          </li>
+          <li id="btn_crop">
+            <span class="crop"></span>
+            <span id="t_crop">裁剪</span>
+          </li>
+          <li id="btn_rectangle">
+            <span class="rect"></span>
+            <span id="t_rectangle">矩形</span>
+          </li>
+          <li id="btn_radius_rectangle">
+            <span class="radius-rect"></span>
+            <span id="t_radius_rectangle">圆角矩形</span>
+          </li>
+          <li id="btn_ellipse">
+            <span class="ellipse"></span>
+            <span id="t_ellipse">圆</span>
+          </li>
+          <li id="btn_line">
+            <img src="/images/editor/line.png" alt="">
+            <span id="t_line">直线</span>
+          </li>
+          <li id="btn_arrow">
+            <img src="/images/editor/arrow.png" alt="">
+            <span id="t_arrow">箭头</span>
+          </li>
+          <li id="btn_blur">
+            <div class="blur-box" id="blackout_box"></div>
+            <span id="t_blur">模糊</span>
+          </li>
+          <li id="btn_text">
+            <div class="text-box" id="font_color_box">A</div>
+            <span id="t_text">文字</span>
+            <div class="tool">
+              <div class="tool-option">
+                <div id="size_10" style="font-size: 10px"></div>
+                <div id="size_14" style="font-size: 14px"></div>
+                <div id="size_18" style="font-size: 18px"></div>
+                <div id="size_32" class="mark" style="font-size: 32px"></div>
+              </div>
+            </div>
+          </li>
+          <li id="btn_color">
+            <div class="color-box" id="color_box"></div>
+            <span id="t_color">颜色</span>
+            <div class="tool">
+              <div id="colors_pad"></div>
+              <div class="clear"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="tip"></div>
+      <div class="toolbar right" style="position:fixed; right:30px; top:0px;">
+        <ul>
+          <li id="btn_save">
+            <img src="/images/editor/icon_save.png" alt="">
+            <span id="t_save"></span>
+          </li>
+          <li id="btn_upload">
+            <img src="/images/editor/pin.png" alt="">
+            <span id="t_upload"></span>
+          </li>
+          <li id="btn_close">
+            <img src="/images/editor/icon_close.png" alt="">
+            <span id="t_close"></span>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </header>
+    <div id="show_box">
+      <div id="photo">
+        <canvas id="canvas"></canvas>
+        <canvas id="mask_canvas"></canvas>
+        <div id="crop_wrapper" class=""></div>
+        <div class="layer" id="layer0"></div>
+      </div>
+      <div id="pin_wrapper" class="dialog-box" style="display:none;">
+        <div class="box-title">
+          <a href="javascript:;" class="close"><i></i></a>
+          <div class="text">采集到花瓣</div>
+          <div id="user_icon"></div>
+        </div>
+        <div class="box-inner">
+          <div class="pbt">
+            <div class="image-picker">
+              <img src="images/load.gif" alt="Loading Indicator" class="load" style="display:none" />
+              <div class="images carousel-container">
+                <div class="carousel-clip"></div>
+              </div>
+            </div>
+            <div class="pin-form">
+              <div class="board-list-overlay"></div>
+              <div class="board-picker">
+                <div class="current">
+                  <div class="name">选择画板...</div>
+                  <div class="down-arrow"></div>
+                </div>
+                <div class="board-list">
+                  <div class="board-list-body">
+                    <ul></ul>
+                  </div>
+                  <div class="create-board">
+                    <input type="text" id="board_name_input" placeholder="创建新画板"/>
+                    <a href="javascript:;" class="nf btn wbtn disabled">创建</a>
+                    <div class="create-board-status"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="fancy-form">
+                <div class="pin-desc">
+                  <textarea name="caption" id="description" cols="30" rows="2" class="description-textarea"></textarea>
+                  <input type="hidden" id="url" />
+                  <label for="" style="display: none;">描述一下这个采集…</label>
+                  <div class="tag-tip">
+                    <span>通过 #标签# 可以给采集添加标签，方便你更好地整理采集</span>
+                  </div>
+                  <div class="tag-prompt" style="display: none;">
+                    <span>推荐标签:</span>
+                    <div class="tags"></div>
+                  </div>
+                  <span class="fff"></span>
+                </div>
+              </div>
+              <div class="create-board-status error mainerror"></div>
+              <div class="buttons">
+                <a href="javascript:;" class="btn rbtn">采下来</a>
+                <label for="" class="weibo less">
+                  <input type="checkbox" class="publish_to_weibo" />
+                  <span>分享给微博粉丝</span>
+                </label>
+              </div>
+            </div>
+            <div id="loading">
+              <div class="desc">正在获取授权...</div>
+              <div class="authorising"></div>
+            </div>
+            <div id="authorization">
+              <div class="desc">
+                请在花瓣网上授权
+              </div>
+              <a href="javascript:;" class="btn rbtn" id="auth_btn">获取授权</a>
+            </div>
+          </div>
+          <div id="pin-done" class="pin-done">
+            <h3>你已经成功采集到花瓣网<a href="" target="_blank" class="less"></a></h3>
+            <div id="pin_operations">
+              <a id="view_pin" href="">查看这个采集</a>&nbsp;|<a id="close_window" href="javascript:;">关闭窗口</a>
+            </div>
+            <ul>
+              <li>
+                <a id="share_sinaweibo" class="share-button btn wbtn" href="javascript:;"><strong>分享到新浪微博</strong><span></span></a>
+              </li>
+              <li>
+                <a id="share_douban" class="share-button btn wbtn" href="javascript:;"><strong>分享到豆瓣</strong><span></span></a>
+              </li>
+              <li>
+                <a id="share_qzone" class="share-button btn wbtn" href="javascript:;"><strong>分享到QQ空间</strong><span></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="msg_bar">
+      <div class="msg-wrapper"><div id="msg" class="msg-inner"></div></div>
+    </div>
+    <script src="js/edit.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+{
+   "about": {
+      "message": "About Huaban.com"
+   },
+   "access_denied": {
+      "message": "Access denied"
+   },
+   "arrow": {
+      "message": "Arrow"
+   },
+   "authorization": {
+      "message": "Authorization"
+   },
+   "blur": {
+      "message": "Blur"
+   },
+   "cancel": {
+      "message": "Cancel"
+   },
+   "captureArea": {
+      "message": "Capture Selected Region"
+   },
+   "captureFullpage": {
+      "message": "Capture Whole Page"
+   },
+   "captureViewport": {
+      "message": "Capture Visible Content"
+   },
+   "color": {
+      "message": "Color"
+   },
+   "crop": {
+      "message": "Crop"
+   },
+   "editPageTitle": {
+      "message": "Screen Capture to Huaban"
+   },
+   "ellipse": {
+      "message": "Ellipse"
+   },
+   "extDescription": {
+      "message": "This extension lets you grab images/videos or capture web pages from any website and add it to boards on Huaban(huaban.com) easily."
+   },
+   "extName": {
+      "message": "Huaban Collector"
+   },
+   "feedback": {
+      "message": "Feedback"
+   },
+   "feedbackText": {
+      "message": "Give us some advice to improve this extension, click here."
+   },
+   "hidePinButton": {
+      "message": "Hide"
+   },
+   "hideShortcut": {
+      "message": "Disable keyboard shortcuts"
+   },
+   "http_413": {
+      "message": "Image is Too Large"
+   },
+   "invalid_grant": {
+      "message": "Invalid grant"
+   },
+   "line": {
+      "message": "Line"
+   },
+   "minImageSide": {
+      "message": "Minimum Image Size"
+   },
+   "network_err": {
+      "message": "Network Error"
+   },
+   "ok": {
+      "message": "OK"
+   },
+   "pinAllText": {
+      "message": "Pin images/videos"
+   },
+   "preferences": {
+      "message": "Preferences"
+   },
+   "radius_rect": {
+      "message": "Radius rect"
+   },
+   "rect": {
+      "message": "Rect"
+   },
+   "remove_auth": {
+      "message": "Remove authorization"
+   },
+   "save": {
+      "message": "Save"
+   },
+   "shoppingName": {
+      "message": "Shopping"
+   },
+   "shortcutSetting": {
+      "message": "Shortcut Settings"
+   },
+   "showPinButton": {
+      "message": "Show"
+   },
+   "showShortcut": {
+      "message": "Enable keyboard shortcuts"
+   },
+   "siteName": {
+      "message": "Huaban"
+   },
+   "size_huge": {
+      "message": "Huge"
+   },
+   "size_large": {
+      "message": "Large"
+   },
+   "size_normal": {
+      "message": "Normal"
+   },
+   "size_small": {
+      "message": "Small"
+   },
+   "text": {
+      "message": "Text"
+   },
+   "toggleBtnText": {
+      "message": "Show pin button"
+   },
+   "undo": {
+      "message": "Undo"
+   },
+   "upload": {
+      "message": "Upload"
+   },
+   "visit": {
+      "message": "Vist"
+   }
+}

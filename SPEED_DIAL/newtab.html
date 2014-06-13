@@ -1,0 +1,497 @@
+<html lang="zh-CN">
+<head>
+<!--
+                                __      __                ___       ___
+  中文版 by http://c7sky.com   /\ \    /\ \  __          /\_ \    /'___'\
+  ____  _____      __     __   \_\ \   \_\ \/\_\     __  \//\ \  /\_\ /\ \
+ /',__\/\ '__'\  /'__'\ /'__'\ /'_' \  /'_' \/\ \  /'__'\  \ \ \ \/_/// /__
+/\__, '\ \ \L\ \/\  __//\  __//\ \L\ \/\ \L\ \ \ \/\ \L\.\_ \_\ \_  // /_\ \  __
+\/\____/\ \ ,__/\ \____\ \____\ \___,_\ \___,_\ \_\ \__/.\_\/\____\/\______/ /\_\
+ \/___/  \ \ \/  \/____/\/____/\/__,_ /\/__,_ /\/_/\/__/\/_/\/____/\/_____/  \/_/
+          \ \_\
+           \/_/               http://speeddial2.com by http://virae.org
+-->
+	<meta charset="utf-8">
+	<meta name="author" content="Michal Šimonfy">
+	<meta http-equiv="cache-control" content="public">
+	<meta http-equiv="expires" content="Wed, 1 Jan 2014 00:00:00 GMT">
+	<title i18n="newtab_new_tab">新标签页</title>
+	<link rel="stylesheet" href="css/master.css" />
+	<link rel="stylesheet" href="css/dial.css" />
+	<script src="js_system/common.js"></script>
+	<script src="js_system/options.js"></script>
+	<script src="js_system/themes.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.ui.min.js"></script>
+	<script src="js/jquery.autocomplete.js"></script>
+	<script src="js/checkboxes.js"></script>
+	<script src="js/tools.js"></script>
+	<script src="js_system/db.js"></script>
+	<script src="js_system/speeddial.js"></script>
+	<script src="js_system/news.js"></script>
+	<script src="js/jscolor.js"></script>
+	<script src="js/jquery.mousewheel.min.js"></script>
+	<script src="js/tooltip.js"></script>
+
+</head>
+
+<body>
+
+	<div id="container">
+
+		<div id="main">
+
+			<ul id="groups"></ul>
+			<ul id="pages"></ul>
+			<br class="clear" />
+			<div id="quick-settings-icon">
+				<div class="settings-icon" rel="tooltip" data-placement="left" title="选项">
+					<img src="images/newtab.settings.png" />
+				</div>
+			</div>
+		</div>
+
+		<div id="sidebar-toggle"></div>
+		<div id="appspanel_wrapper"><ul id="appspanel"></ul></div>
+		<div class="sidebar-arrow"></div>
+
+	</div><!--! end of #container -->
+
+<!--! messages -->
+	<div id="message"></div>
+
+<!--! context menu -->
+	<div class="contextMenu" id="editlinkmenu">
+	<ul>
+		<li id="opennewwindow" i18n="newtab_open_in_new_tab">Open in new tab</li>
+		<li class="separator"></li>
+		<li id="edit" i18n="edit">Edit</li>
+		<li id="delete" i18n="remove">Remove</li>
+		<li id="refresh" i18n="newtab_reload_thumbnail">Reload thumbnail</li>
+	</ul>
+	</div>
+	<div class="contextMenu" id="newitemmenu">
+	<ul>
+		<!--<li id="add">Add dial</li>-->
+		<li id="add" i18n="newtab_add_dial">Add Dial</li>
+		<li id="create_group" i18n="newtab_create_group">Create new group</li>
+		<li class="separator"></li>
+		<li id="options" i18n="options">Options</li>
+		<li id="statistics" i18n="statistics">Statistics</li>
+		<li id="help" i18n="help">Help</li>
+	</ul>
+	</div>
+	<div class="contextMenu" id="edithomegroupmenu">
+	<ul>
+		<li class="grey" i18n="newtab_homegroup">This is your home group</li>
+		<li class="separator"></li>
+		<li id="editgroup" i18n="newtab_edit_group">Edit group</li>
+		<li id="openallgroup" i18n="newtab_open_all_links">Open all links</li>
+	</ul>
+	</div>
+	<div class="contextMenu" id="editgroupmenu">
+	<ul>
+		<li id="openallgroup" i18n="newtab_open_all_links">Open all links</li>
+		<li class="separator"></li>
+		<li id="editgroup" i18n="newtab_edit_group">Edit group</li>
+		<li id="deletegroup" i18n="newtab_remove_group">Remove group</li>
+	</ul>
+	</div>
+	<div class="contextMenu" id="editappmenu">
+	<ul>
+		<li id="app_launch" i18n="newtab_app_launch">Launch application</li>
+		<li class="separator"></li>
+		<li id="app_options" i18n="options">Options</li>
+		<li id="app_uninstall" i18n="uninstall">Uninstall</li>
+	</ul>
+	</div>
+
+<!--! add/edit dialog -->
+	<div id="url-dialog" class="dialog dropshadow insetshadow">
+	<form accept-charset="utf-8" id="add-edit-dialog">
+
+	<!-- titles -->
+	<div class="dialog-header">
+		<h2 class="uipart bookmark_delete" i18n="newtab_remove_question">Remove dial</h2>
+		<h2 class="uipart add_dialog_label" i18n="newtab_add_new_dial">Add new dial</h2>
+		<h2 class="uipart edit_dialog_label" i18n="newtab_edit_dial">Edit dial</h2>
+		<h2 class="uipart group_edit" i18n="newtab_edit_group">Edit group</h2>
+		<h2 class="uipart group_add" i18n="newtab_create_group">Create group</h2>
+		<h2 class="uipart group_delete" i18n="newtab_remove_group">Remove group</h2>
+	</div>
+	<!-- end :titles -->
+
+	<div class="website-selector">
+		<a class="alignright btn classic">&times; 关闭</a>
+		<h3>从最热门网站中选择</h3>
+	</div>
+
+	<div class="logo-container no-thumbnail uipart">
+		<div></div>
+		<a class="remove-thumbnail"></a>
+	</div>
+
+	<!-- DIAL -->
+	<div class="uipart url-dialog-url">
+		<input type="hidden" name="bookmark_id" value="" id="bookmark_id" />
+		<label><span i18n="url">Url</span> <span class="required">*</span></label>
+		<div>
+			<input type="text" maxlength="255" name="url" value="" id="url" placeholder="输入或粘贴地址" />
+			<div class="url-selector" rel="tooltip" title="从最受欢迎网站中选择"></div>
+		</div>
+	</div>
+	<!-- END:DIAL -->
+
+	<!-- DIAL & FOLDER -->
+	<p id="url-dialog-name">
+		<label><span i18n="name">Name</span> <span class="required">*</span></label>
+		<input type="text" maxlength="32" name="name" value="" id="name" placeholder="输入名称" />
+	</p>
+	<div class="uipart" id="url-dialog-thumbnail">
+
+	<div class="url-options">
+		<h3 style="margin:20px 0 6px 0;">自定义缩略图</h3>
+
+		<p class="uipart capture-explain">
+			缩略图会在你第一次打开页面时截取。或者，你也可以从最受欢迎网站的 LOGO 中选择、从你的电脑中上传、输入图片地址。
+		</p>
+
+		<!-- Preview -->
+		<div class="thumbnail-options">
+			<button class="btn classic" rel="logo-custom-url">输入图片地址</button>
+			<button class="btn classic" rel="logo-upload">选择文件</button>
+			<button class="btn classic" rel="logo-popular">最受欢迎网站</button>
+			<button class="btn classic" rel="logo-lucky">手气不错（中文版原创功能）</button>
+		</div>
+	</div>
+
+		<!-- Lucky -->
+		<div id="logo-lucky" class="tab">
+			正在获取网站Logo..
+		</div>
+		
+		<!-- Url -->
+		<div id="logo-custom-url" class="tab">
+			<input type="text" maxlength="255" name="thumbnail" value="" id="thumbnail" placeholder="Enter image url..." />
+		</div>
+
+		<!-- Upload -->
+		<div id="logo-upload" class="tab">
+			<div class="feature-allowed hidden">
+				<input type="file" id="upload-logo" accept="image/*" class="hidden" />
+				<div class="progress-bar"><div class="bar"><div class="fill"></div></div></div>
+				<!-- Please wait, the picture is being uploaded. -->
+			</div>
+			<div class="feature-locked hidden">
+				该功能仅对 <a href="" title="成为 Pro 用户解锁该功能">Pro 用户</a> 开放。
+			</div>
+		</div>
+
+		<!-- Predefined -->
+		<div id="logo-popular" class="tab">
+			<ul name="logo" id="logo">
+<li data-href="http://www.163.com" data-url="http://farm6.staticflickr.com/5511/9486544712_19ace43746.jpg">网易</li>
+<li data-href="http://www.sohu.com" data-url="http://farm8.staticflickr.com/7318/9483745297_61417cf86b.jpg">搜狐</li>
+<li data-href="http://www.sina.com.cn" data-url="http://farm4.staticflickr.com/3790/9483745431_37e738f22e.jpg">新浪网</li>
+<li data-href="http://www.qq.com" data-url="http://farm8.staticflickr.com/7330/9486544690_fb82f4545c_z.jpg">腾讯网</li>
+<li data-href="http://weibo.com" data-url="http://farm4.staticflickr.com/3709/9483829529_1ec6888346_z.jpg">新浪微博</li>
+<li data-href="http://t.qq.com" data-url="http://farm4.staticflickr.com/3795/9486543972_d9d0d16102.jpg">腾讯微博</li>
+<li data-href="http://t.163.com" data-url="http://farm4.staticflickr.com/3697/9483745347_fefa23fde4.jpg">网易微博</li>
+<li data-href="http://www.ifeng.com" data-url="http://farm6.staticflickr.com/5329/9483745669_69e00c812f.jpg">凤凰网</li>
+<li data-href="http://www.baidu.com" data-url="http://farm6.staticflickr.com/5537/9483932111_e7d804d24c.jpg">百度</li>
+<li data-href="http://tieba.baidu.com" data-url="http://farm8.staticflickr.com/7367/9486730858_1ffa050d00_m.jpg">百度贴吧</li>
+<li data-href="http://www.mop.com" data-url="http://farm6.staticflickr.com/5499/9483745575_7388a57027_m.jpg">猫扑</li>
+<li data-href="http://www.cnbeta.com" data-url="http://farm8.staticflickr.com/7338/9486544740_e952996928.jpg">cnBeta.com</li>
+<li data-href="http://www.renren.com" data-url="http://farm6.staticflickr.com/5486/9483745315_3a17624392.jpg">人人网</li>
+<li data-href="http://qzone.qq.com" data-url="http://farm4.staticflickr.com/3814/9483931937_fef2f14165.jpg">QQ空间</li>
+<li data-href="http://www.jd.com" data-url="http://farm3.staticflickr.com/2841/9486628612_605325d2c5_z.jpg">京东</li>
+<li data-href="http://www.taobao.com" data-url="http://farm3.staticflickr.com/2825/9486544086_4800a35cd6_z.jpg">淘宝网</li>
+<li data-href="http://www.dangdang.com" data-url="http://farm6.staticflickr.com/5530/9486544588_55d0aa4f76.jpg">当当网</li>
+<li data-href="http://www.techweb.com" data-url="http://farm4.staticflickr.com/3765/9483745175_4685cfefda.jpg">TechWeb</li>
+<li data-href="http://www.tianya.com" data-url="http://farm4.staticflickr.com/3784/9486544030_7576420f81.jpg">天涯社区</li>
+<li data-href="http://www.tudou.com" data-url="http://farm8.staticflickr.com/7440/9486543940_338479b830_n.jpg">土豆</li>
+<li data-href="http://www.youku.com" data-url="http://farm3.staticflickr.com/2857/9486543834_c2620083c0.jpg">优酷</li>
+<li data-href="http://www.douban.com" data-url="http://farm6.staticflickr.com/5461/9486628582_2511925550.jpg">豆瓣</li>
+<li data-href="http://www.zhihu.com" data-url="http://farm8.staticflickr.com/7395/9483829503_91fd317d41.jpg">知乎</li>
+<li data-href="http://www.guokr.com" data-url="http://farm6.staticflickr.com/5491/9486731044_116abf6584_m.jpg">果壳</li>
+<li data-href="http://www.xiami.com" data-url="http://farm3.staticflickr.com/2834/9483931733_333ac6344e.jpg">虾米音乐</li>
+<li data-href="http://www.csdn.net" data-url="http://farm4.staticflickr.com/3683/9483745787_b55e9f2872_m.jpg">CSDN</li>
+<li data-href="http://www.enet.com.cn" data-url="http://farm6.staticflickr.com/5460/9483745761_88a7a7dec1_z.jpg">eNet硅谷动力</li>
+<li data-href="http://www.it168.com" data-url="http://farm3.staticflickr.com/2839/9483745587_0941e253fe.jpg">IT168.com</li>
+<li data-href="http://www.pconline.com.cn" data-url="http://farm8.staticflickr.com/7287/9486544368_99cbb13e0d.jpg">太平洋电脑网</li>
+
+<li data-href="http://www.zol.com" data-url="http://icon.zol-img.com.cn/2012/logo.png">中关村在线</li>
+<li data-href="http://www.pcbeta.com" data-url="http://bbs.pcbeta.com/static/image/pcbeta/logo_s.png">远景论坛</li>
+<li data-href="http://www.meizu.com" data-url="http://i.min.us/ile0PU.png">魅族科技</li>
+<li data-href="http://www..com" data-url="http://www.qiyipic.com/common/fix/weidy_images/qiyiLogo.png">爱奇艺</li>
+<li data-href="http://www.verycd.com" data-url="http://v4.vcimg.com/global/images/logo.png">VeryCD</li>
+<li data-href="http://cn.engadget.com" data-url="http://www.blogsmithmedia.com/cn.engadget.com/media/eng-chinesesimp-logo.png">瘾科技</li>
+<li data-href="http://www.engadget.com" data-url="http://www.blogsmithmedia.com/www.engadget.com/media/engadget_logo.png">engadget</li>
+<li data-href="http://www.ifanr.com" data-url="http://cdn.ifanr.cn/wp-content/uploads/2012/09/logocnb.png">爱范儿</li>
+<li data-href="http://www.36kr.com" data-url="http://a.36krcnd.com/photo/6fbcd8eda0c0d0ce194b208005376e92.png">36氪</li>
+
+			<li data-href="http://www.youtube.com" data-url="http://farm6.static.flickr.com/5266/5612548979_9d0135356c_o.jpg">Youtube</li>
+			<li data-href="https://www.google.com" data-url="http://farm9.staticflickr.com/8119/8659196939_84f2962d79_o.png">Google</li>
+			<li data-href="https://mail.google.com" data-url="http://farm9.staticflickr.com/8113/8660321326_d1ca08f601_o.png">Gmail</li>
+			<li data-href="https://mail.google.com" data-url="http://farm9.staticflickr.com/8114/8659205975_28c7b18150_o.jpg">Gmail</li>
+			<li data-href="https://www.facebook.com" data-url="http://i.imgur.com/yIeoHS5.png">Facebook</li>
+			<li data-href="https://twitter.com" data-url="http://i.imgur.com/twYgntf.png">Twitter</li>
+			<li data-href="http://www.amazon.com" data-url="http://farm6.static.flickr.com/5308/5612547127_2795ba0088_o.png">Amazon</li>
+			<li data-href="https://plus.google.com" data-url="http://farm9.staticflickr.com/8124/8659210969_6ba5abd1cc_o.jpg">Google+</li>
+			<li data-href="https://drive.google.com" data-url="http://farm9.staticflickr.com/8124/8660297258_6291ac830d_o.png">Google Drive</li>
+			<li data-href="https://play.google.com" data-url="http://farm9.staticflickr.com/8125/8660297240_48be662898_o.png">Google Play</li>
+			<li data-href="https://www.paypal.com" data-url="http://farm9.staticflickr.com/8114/8660297238_a162e54421_o.jpg">Paypal</li>
+			<li data-href="https://pinterest.com/" data-url="http://farm9.staticflickr.com/8109/8660297236_5ec261a4cf_o.png">Pinterest</li>
+			<li data-href="http://www.reddit.com" data-url="http://farm9.staticflickr.com/8114/8659196901_a5e301b242_o.png">Reddit</li>
+			<li data-href="https://www.dropbox.com" data-url="http://farm6.static.flickr.com/5150/5612548579_c7e2229542_o.png">Dropbox</li>
+			<li data-href="https://github.com" data-url="http://farm6.static.flickr.com/5149/5612548639_6ce41bf235_o.jpg">Github</li>
+			<li data-href="http://dribbble.com" data-url="http://farm6.static.flickr.com/5065/5612547459_ffe302f6b3_o.jpg">Dribbble</li>
+			<li data-href="http://www.wikipedia.org" data-url="http://farm6.static.flickr.com/5030/5613126220_3f11312ec5_o.png">Wikipedia</li>
+			<li data-href="http://www.linkedin.com" data-url="http://farm6.static.flickr.com/5263/5613126948_f31f2422b8_o.jpg">Linked In</li>
+			<li data-href="http://www.bbc.co.uk" data-url="http://farm6.static.flickr.com/5148/5612548351_9411e74716_o.png">BBC</li>
+			<li data-href="http://www.ebay.com" data-url="http://farm6.static.flickr.com/5223/5613126420_6d8dd8f81d_o.jpg">Ebay</li>
+			<li data-href="http://lifehacker.com" data-url="http://farm6.static.flickr.com/5181/5612548209_bf2575831e_o.png">Lifehacker</li>
+			<li data-href="http://www.aol.com" data-url="http://farm6.static.flickr.com/5225/5612548425_d14a25ab7a_o.jpg">Aol</li>
+			<li data-href="http://www.apple.com" data-url="http://farm6.static.flickr.com/5063/5612547145_625055a1c6_o.png">Apple</li>
+			<li data-href="http://www.ask.com" data-url="http://farm6.static.flickr.com/5108/5612548509_057cc6a0fa_o.png">Ask</li>
+			<li data-href="https://basecamp.com" data-url="http://farm6.static.flickr.com/5305/5613126090_8817365b5d_o.png">Basecamp</li>
+			<li data-href="http://www.bing.com" data-url="http://farm6.static.flickr.com/5145/5612547231_41be1f7af1_o.png">Bing</li>
+			<li data-href="http://blogger.com" data-url="http://farm6.static.flickr.com/5264/5612547257_89c0646b7e_o.png">Blogger</li>
+			<li data-href="http://www.cnet.com" data-url="http://farm6.static.flickr.com/5103/5612547401_fe7c50145e_o.png">Cnet</li>
+			<li data-href="http://www.craigslist.org" data-url="http://farm6.static.flickr.com/5108/5613126266_b2d2b57e01_o.png">Craigslist</li>
+			<li data-href="http://www.dailymotion.com" data-url="http://farm6.static.flickr.com/5106/5613127096_8ed7fe6280_o.jpg">Dailymotion</li>
+			<li data-href="https://delicious.com" data-url="http://farm6.static.flickr.com/5268/5613127398_057cc6a0fa_o.jpg">Delicious</li>
+			<li data-href="http://www.deviantart.com" data-url="http://farm6.static.flickr.com/5310/5612547429_851d9333bc_o.gif">Deviantart</li>
+			<li data-href="http://digg.com" data-url="http://farm6.static.flickr.com/5107/5613127304_54410dc147_o.png">Digg</li>
+			<li data-href="https://www.diigo.com" data-url="http://farm6.static.flickr.com/5068/5613127424_ba6b9ce1fb_o.png">Diigo</li>
+			<li data-href="http://feedly.com" data-url="http://farm6.static.flickr.com/5147/5612547583_8daa982867_o.jpg">Feedly</li>
+			<li data-href="http://ffffound.com" data-url="http://farm6.static.flickr.com/5064/5613126494_793c4cbc7b_o.jpg">Ffffound</li>
+			<li data-href="http://www.flickr.com" data-url="http://farm6.static.flickr.com/5066/5613127018_e8b8002261_o.png">Flickr</li>
+			<li data-href="http://forrst.com" data-url="http://farm6.static.flickr.com/5187/5613126368_5dc9d395df_o.jpg">Forrst</li>
+			<li data-href="https://foursquare.com" data-url="http://farm6.static.flickr.com/5222/5613127480_61e80dc1e7_o.jpg">Foursquare</li>
+			<li data-href="http://gizmodo.com" data-url="http://farm6.static.flickr.com/5024/5612547633_2ec7199e05_o.gif">Gizmodo</li>
+			<li data-href="http://www.google.com/analytics" data-url="http://farm6.static.flickr.com/5230/5612548687_8d52a8da49_o.png">Google Analytics</li>
+			<li data-href="https://www.google.com/calendar" data-url="http://farm9.staticflickr.com/8122/8660321328_fdaf99b1b8_o.png">Google Calendar</li>
+			<li data-href="https://www.google.com/calendar" data-url="http://farm6.static.flickr.com/5182/5613127636_e854aea66b_o.png">Google Calendar</li>
+			<li data-href="https://www.google.com/maps" data-url="http://farm6.static.flickr.com/5063/5612548815_5f46bebea8_o.png">Google Maps</li>
+			<li data-href="https://docs.google.com" data-url="http://farm6.static.flickr.com/5263/5613127662_7c7053388c_o.png">Google Docs</li>
+			<li data-href="https://groups.google.com" data-url="http://farm6.static.flickr.com/5307/5612548787_5acd8513c0_o.png">Google Groups</li>
+			<li data-href="https://www.google.com" data-url="http://farm6.static.flickr.com/5221/5612548667_a9b09a2068_o.png">Google Search</li>
+			<li data-href="https://news.google.com" data-url="http://farm6.static.flickr.com/5265/5613127728_79afc7eeca_o.png">Google News</li>
+			<li data-href="http://www.orkut.com" data-url="http://farm6.static.flickr.com/5266/5612548895_13384a663c_o.png">Orkut</li>
+			<li data-href="http://grooveshark.com" data-url="http://farm6.static.flickr.com/5104/5613126590_57b470661f_o.png">Grooveshark</li>
+			<li data-href="https://news.ycombinator.com" data-url="http://farm6.static.flickr.com/5262/5613126614_b2158433d4_o.gif">Hackernews</li>
+			<li data-href="http://www.hulu.com" data-url="http://farm6.static.flickr.com/5185/5612548147_3199620e1e_o.png">Hulu</li>
+			<li data-href="https://ifttt.com" data-url="http://farm6.static.flickr.com/5304/5612548471_4425892b60_o.png">Ifttt</li>
+			<li data-href="http://www.instapaper.com" data-url="http://farm6.static.flickr.com/5109/5613126866_c7c062ce7c_o.png">Instapaper</li>
+			<li data-href="http://last.fm" data-url="http://farm6.static.flickr.com/5228/5612548029_964fc1fa0b_o.png">Last.fm</li>
+			<li data-href="http://mashable.com" data-url="http://farm6.static.flickr.com/5025/5613126932_391d019251_o.png">Mashable</li>
+			<li data-href="http://www.metacafe.com" data-url="http://farm6.static.flickr.com/5303/5613127072_fcf378487b_o.png">Metacafe</li>
+			<li data-href="http://www.mixcloud.com" data-url="http://farm6.static.flickr.com/5190/5612547509_86669e0726_o.jpg">Mixcloud</li>
+			<li data-href="http://www.msn.com" data-url="http://farm6.static.flickr.com/5102/5613127170_cf0118130f_o.png">Msn</li>
+			<li data-href="https://myspace.com/" data-url="http://farm6.static.flickr.com/5221/5612548053_69d8ba7bd6_o.jpg">Myspace</li>
+			<li data-href="http://www.nytimes.com" data-url="http://farm6.static.flickr.com/5183/5613127240_fdf6395a72_o.jpg">New York Times</li>
+			<li data-href="http://picasa.google.com" data-url="http://farm6.static.flickr.com/5142/5612548945_9d019ca609_o.png">Picasa</li>
+			<li data-href="http://pinboard.in" data-url="http://farm6.static.flickr.com/5184/5613127968_eebf637eee_o.png">Pinboard.in</li>
+			<li data-href="http://www.posterous.com" data-url="http://farm6.static.flickr.com/5064/5613126842_e0813dab95_o.png">Posterous</li>
+			<li data-href="http://www.rememberthemilk.com" data-url="http://farm6.static.flickr.com/5302/5613127990_09cd978cc0_o.jpg">Remember The Milk</li>
+			<li data-href="http://www.scribd.com" data-url="http://farm6.static.flickr.com/5106/5612549099_bc684285d3_o.jpg">Scribd</li>
+			<li data-href="http://www.sina.com" data-url="http://farm2.static.flickr.com/1409/5613226230_df2139b573_o.jpg">Sina</li>
+			<li data-href="https://soundcloud.com" data-url="http://farm6.static.flickr.com/5183/5613126828_afbc5e94b9_o.jpg">Soundcloud</li>
+			<li data-href="http://sourceforge.net" data-url="http://farm6.static.flickr.com/5189/5612549067_1aa5066a4f_o.jpg">Sourceforge</li>
+			<li data-href="https://springpad.com" data-url="http://farm6.static.flickr.com/5310/5612547917_7274aebc6a_o.png">Springpad</li>
+			<li data-href="http://www.stumbleupon.com" data-url="http://farm6.static.flickr.com/5067/5613126782_f0aa8c6f3c_o.jpg">Stumbleupon</li>
+			<li data-href="http://techcrunch.com" data-url="http://farm6.static.flickr.com/5148/5612547863_02d3843b72_o.jpg">Techcrunch</li>
+			<li data-href="http://technorati.com" data-url="http://farm6.static.flickr.com/5064/5612548265_22701c9c84_o.jpg">Technorati</li>
+			<li data-href="http://www.ted.com" data-url="http://farm6.static.flickr.com/5222/5612647167_dccacfeb49_o.jpg">Ted Talks</li>
+			<li data-href="https://www.tumblr.com" data-url="http://farm6.static.flickr.com/5270/5612547831_d2966fa009_o.png">Tumblr</li>
+			<li data-href="https://vimeo.com" data-url="http://farm6.static.flickr.com/5145/5612547795_53646a88eb_o.png">Vimeo</li>
+			<li data-href="http://www.wired.com" data-url="http://farm6.static.flickr.com/5107/5613126666_c7f3226bb8_o.jpg">Wired</li>
+			<li data-href="http://www.livejournal.com" data-url="http://farm6.static.flickr.com/5184/5612654409_b5e6509e41_o.png">Livejournal</li>
+			<li data-href="http://ubu.com" data-url="http://farm6.static.flickr.com/5305/5612647193_6b4fe7772e_o.jpg">Ubu</li>
+			<li data-href="http://wordpress.com" data-url="http://farm6.static.flickr.com/5181/5612548301_6913510f55_o.png">Wordpress</li>
+			<li data-href="http://www.yahoo.com" data-url="http://farm6.static.flickr.com/5069/5612547747_db53b9ac06_o.jpg">Yahoo</li>
+			</ul>
+		</div>
+		<!--
+			TODO: icons from:
+			http://othericons.com/
+			http://modern.squintongreen.com/
+			http://fairheadcreative.com/blog/fc-webicons-set-launched/
+			http://simpleicons.org/
+		-->
+		<input type="hidden" id="url-dialog-groups" />
+	</div>
+	<div id="url-dialog-color" class="uipart">
+		<label i18n="background_color">Background color</label>
+		<input type="text" maxlength="255" id="color" value="FFFFFF" class="color" />
+	</div>
+	<div class="uipart group_delete">
+		<span i18n="newtab_group_remove_warning">
+			This will remove selected group with all dials inside it. <br />Do you wish to continue?
+		</span>
+	</div>
+	<div class="uipart bookmark_delete">
+		<span i18n="newtab_dial_remove_warning">Do you really wish to remove this dial?</span>
+	</div>
+	<!-- END: DIAL & FOLDER -->
+
+	<div class="dialog-footer">
+		<input type="button" class="click-switch-dialog-null btn blue btn-small" value="取消" />
+		<div class="uipart add_dialog_label">
+			<input type="button" id="add_bookmark" class="btn blue btn-small" value="保存" />
+		</div>
+		<div class="uipart edit_dialog_label">
+			<input type="button" id="edit_bookmark" class="btn blue btn-small" value="更新" />
+		</div>
+		<div class="uipart group_add">
+			<input type="button" id="add_group" class="btn blue btn-small" value="创建群组" />
+		</div>
+		<div class="uipart group_edit">
+			<input type="button" id="edit_group" class="btn blue btn-small" value="更新群组" />
+		</div>
+		<div class="uipart group_delete">
+			<input type="button" id="delete_group" class="btn red btn-small warning_button" value="删除" />
+		</div>
+		<div class="uipart bookmark_delete">
+			<input type="button" id="delete_dial" class="btn red btn-small warning_button" value="删除" />
+		</div>
+	</div>
+	<br class="clear" />
+	<br class="clear" />
+	</form>
+	</div>
+
+<!--! sidebars -->
+	<div id="sidebars">
+		<div id="apps">
+			<h1><a href="https://chrome.google.com/webstore/category/home" i18n="sidebar_applications">应用</a></h1>
+			<hr />
+			<ul id="apps_ul"></ul>
+		</div>
+		<div id="delicious">
+			<h1><a href="http://delicious.com/" i18n="sidebar_delicious_bookmarks">Delicious.</a></h1>
+			<div id="delicious_search_li"><input class="sidebar_search clear-value click-clear-value" type="text" name="delicious_search" value="搜索你的delicious"  id="delicious-search" /><br /></div>
+			<a id="last25bookmarks" rel="last25bookmarks" class="delicious_tag" i18n="sidebar_delicious_last25_bookmarks">显示最近保存的书签</a>
+			<ul id="d_tags"></ul>
+			<ul id="d_bookmarks"></ul>
+		</div>
+		<div id="pinboard">
+			<h1><a href="http://piboard.in/">Pinboard.</a></h1>
+			<div id="pinboard-search"><input class="sidebar_search clear-value click-clear-value" type="text" name="pinboard_search" value="搜索你的书签" id="pinboard-search" /><br /></div>
+			<a id="last25bookmarks" rel="last25bookmarks" class="pinboard_tag">显示最近保存的书签</a>
+			<ul id="d_tags"></ul>
+			<ul id="d_bookmarks"></ul>
+		</div>
+		<div id="bookmarks">
+			<div>
+			<h1><a i18n="sidebar_bookmarks" href="chrome://bookmarks/">书签</a></h1>
+			<div id="bookmark_search_li"><input class="sidebar_search clear-value click-clear-value" type="text" name="bookmarks_search" value="搜索你的书签" id="bookmarks-search" /></div>
+			<ul></ul>
+			</div>
+		</div>
+		<div id="googlebookmarks">
+			<h1><a href="http://www.google.com/bookmarks" i18n="sidebar_google_bookmarks">
+				Google 书签</a></h1>
+			<div id="googlebookmarks-search">
+				<div id="googlebookmarks-searchtext">
+					<input type="text" id="googlebookmarks-query" />
+				</div>
+				<a id="googlebookmarks-clear" href="#" class="click-clear-search" i18n="newtab_clear_results">清空结果</a>
+				<div id="googlebookmarks-title"></div>
+				<br class="clear" />
+			</div>
+			<div id="googlebookmarks-labels"></div>
+			<hr />
+			<ul id="googlebookmarks-bookmarks"></ul>
+		</div>
+		<div id="history">
+			<h1><a href="#" class="click-open" data-url="chrome://history/" i18n="recently_closed_tabs">Recently closed tabs.</a></li>
+			<div id="history_search_li"><input class="sidebar_search clear-value click-clear-value" type="text" name="history_search" value="搜索历史记录" id="history-search" /></div>
+			<ul id="history_items"></ul>
+		</div>
+	</div>
+
+	<div id="news">
+		<img src="images/newtab.close.png" class="close close-news"/>
+		<div class="content"></div>
+		<button class="button btn close-news">关闭消息</button>
+	</div>
+
+	<footer></footer>
+
+	<div id="quick-options" class="dialog">
+		<div class="dialog-header">
+			<a class="close">&times;</a>
+			<h2>快速选项</h2>
+		</div>
+		<div class="quick-options">
+			<table>
+				<tr>
+					<td width="120">列数</td>
+					<td>
+						<input type="range" min="2" max="20" step="1" value="" id="options-columns" style="width:150px;" />
+						<input class="input-range-value" disabled="disabled" name="options-columns-val" value="" id="options-columns-val" /> 列
+					</td>
+				</tr>
+				<tr>
+					<td>间距</td>
+					<td>
+						<input type="range" min="0" max="50" step="1" value="" id="options-dialspacing" style="width:150px;" />
+						<input class="input-range-value" disabled="disabled" name="options-dialspacing-val" value="" id="options-dialspacing-val" /> px
+					</td>
+				</tr>
+				<tr>
+					<td>宽度</td>
+					<td>
+						<input type="range" min="50" max="95" value="" id="options-dialspace" style="width:150px"/>
+						<input disabled="disabled" name="options-dialspace-val" value="" id="options-dialspace-val" class="input-range-value" /> %
+					</td>
+				</tr>
+				<tr>
+					<td>垂直居中</td>
+					<td><input type="checkbox" class="on_off" name="options-centervertically" id="options-centervertically" value="1" /></td>
+				</tr>
+				<tr>
+					<td>选择布局</td>
+					<td>
+						<div class="radio">
+							<input type="radio" name="options-scrollLayout" class="click-set-value" id="options-scrollLayout0" data-option="options.scrollLayout" data-value="0" />
+							<label for="options-scrollLayout0">
+								适应屏幕
+							</label>
+							<input type="radio" name="options-scrollLayout" class="click-set-value" id="options-scrollLayout1" data-option="options.scrollLayout" data-value="1" />
+							<label for="options-scrollLayout1">
+								允许滚动
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>显示 <b style="font-size:16px;">+</b> 按钮</td>
+					<td><input type="checkbox" class="on_off" id="options-showAddButton" name="options-showAddButton" value="1" /></td>
+				</tr>
+			</table>
+
+			<a href="#" class="btn grey btn-small btn-border block click-open-extension-page newtab-show-free" data-url="options.html#tab-sync">
+				你的数据还未备份。
+			</a>
+			<a href="#" class="btn grey btn-small block click-open-extension-page newtab-show-premium" data-url="options.html#tab-sync">
+				<img src="images/options.sync-indicator.png" alt="" />
+				你的数据已同步并备份！
+			</a>
+
+		</div>
+		<div class="dialog-footer">
+			<button class="btn btn-small blue alignleft click-open-extension-page" data-url="options.html#design">主题 <span style="padding: 2px 4px; font-size: 12px; background: #ff6446; color:#fff; border-radius:2px; ">new</span></button>
+			<input type="button" class="btn btn-small blue click-open-extension-page" data-url="options.html" value="更多选项..." title="选项" />
+		</div>
+	</div>
+
+	<a class="become-a-pro" href="options.html#tab-sync">
+		Become a Pro!
+	</a>
+
+	<div id="overlay"></div>
+
+</body></html>

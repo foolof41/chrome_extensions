@@ -1,0 +1,37 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "icon64.png",
+      "default_popup": "menu.html",
+      "default_title": "Speed Dial 2 中文版"
+   },
+   "chrome_url_overrides": {
+      "newtab": "newtab.html"
+   },
+   "content_scripts": [ {
+      "exclude_matches": [ "https://chrome.google.com/webstore*" ],
+      "js": [ "js_system/shortcut.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "default_locale": "zh_CN",
+   "description": "Speed Dial 2 是一款简洁高效的快速拨号扩展程序，快速访问你最常浏览的页面、书签和历史记录，替换新标签页的最佳方案。",
+   "homepage_url": "http://c7sky.com/chrome-speeddial2-cn.html",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "64": "icon64.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC16w+gVAtnRyBh8WgA7JlL4gFFLt/yCjgbFM3bJ07zLoupWBgXuztc/bCrGAjB++Duh70093IE4yXCssyJrhuBQIPVhzGZDscRSxXaeUPF1Q3/0Cp9o9yvd5r8DloeIxfzq/bcJniZrBq+QgLx40iv0wD/7pGq8X8buFt9aeUwuQIDAQAB",
+   "manifest_version": 2,
+   "name": "Speed Dial 2 中文版",
+   "options_page": "options.html",
+   "permissions": [ "bookmarks", "topSites", "tabs", "history", "management", "storage", "unlimitedStorage", "chrome://favicon/", "\u003Call_urls>", "http://*/", "https://*/", "contextMenus", "notifications" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.7.9",
+   "web_accessible_resources": [ "newtab.html" ]
+}

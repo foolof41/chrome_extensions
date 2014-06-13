@@ -1,0 +1,85 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Michal Šimonfy | http://virae.org">
+	<title i18n="statistics_pagetitle"></title>
+	<link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="css/options.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js_system/common.js"></script>
+	<script src="js_system/db.js"></script>
+	<script src="js_system/statistics.js"></script>
+	<style type="text/css" media="screen">
+	#main a {text-decoration:none;color:#477FC0!important}
+	#main a:hover {text-decoration:underline!important;}
+	#chart_speeddial {min-height:200px;}
+	</style>
+</head>
+<body>
+	<div id="container">
+
+		<header>
+			<ul id="navigation">
+				<li><a class="click-open-extension-page" data-url="newtab.html">&laquo; <span i18n="back"></span></a></li>
+			</ul>
+		</header>
+
+		<div id="main" class="rounded10 dropshadow">
+
+		<h1 i18n="statistics_statistics"></h1>
+		<h2 i18n="statistics_most_visited_sd2"></h2>
+
+		<center>
+			<a href="#" id="statistics_overall" i18n="statistics_overall"></a> |
+			<a href="#" id="statistics_morning" i18n="statistics_morning"></a> |
+			<a href="#" id="statistics_afternoon" i18n="statistics_afternoon"></a> |
+			<a href="#" id="statistics_evening" i18n="statistics_evening"></a> |
+			<a href="#" id="statistics_night" i18n="statistics_night"></a>
+		</center>
+
+		<br /><br />
+
+		<div id="chart_speeddial"></div>
+
+		<br /><br />
+
+		<h2 i18n="statistics_most_visited_history"></h2>
+
+		<div id="chart_browser"><img src="images/loading.gif" /> <span i18n="statistics_loading_message"></div>
+
+		<br /><br /><br /><br /><br />
+
+			<center>
+				<a class="click-open-extension-page" data-url="newtab.html">
+					&laquo; <span i18n="back_to_dials"></span>
+				</a>
+			</center><br />
+
+		</div>
+
+		<div id="support">
+
+			<div>
+			<h1 style="margin:0;">试试 <span style="color:#72DBD8">Speed Dial 2 Pro</span></h1>
+			<p style="font-size:16px;color:#eee;line-height:26px;">
+				- 在不同的电脑间同步您的书签和设置。<br />
+				- 在任何地方访问您的书签。<br />
+				- 与任何移动设备协同工作 - 无论是手机还是平板电脑！<br /><br />
+				<input type="button" class="rounded4 noalign click-open-extension-page" data-url="options.html#tab-sync" value="了解更多" />
+			</p>
+			<br /><br />
+			<p>
+				<a target="_blank" href="http://speeddial2.com/support/">了解更多关于即将发布的功能</a><br />
+				<a target="_blank" href="http://speeddial2.com/support/">意见反馈</a><br />
+			</p>
+			</div><br /><br /><br />
+
+		</div>
+
+		<footer>中文版 <span>&hearts;</span> by <a href="http://c7sky.com/" target="_blank" id="virae">小影</a></footer>
+
+	</div> <!--! end of #container -->
+
+	<!--! plugin component dialogs -->
+	<div id="message"></div>
+</body></html>

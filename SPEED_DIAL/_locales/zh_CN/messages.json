@@ -1,0 +1,805 @@
+{
+   "add": {
+      "message": "添加"
+   },
+   "alignment": {
+      "message": "对齐方式"
+   },
+   "appDesc": {
+      "description": "App description.",
+      "message": "Speed Dial 2 是一个简洁高效的快速拨号扩展程序，快速访问你的应用程序、书签和历史记录。"
+   },
+   "appName": {
+      "description": "App name.",
+      "message": "Speed Dial 2 中文版"
+   },
+   "applications": {
+      "message": "应用程序"
+   },
+   "apps_app_uninstalled": {
+      "message": "应用程序删除成功"
+   },
+   "apps_do_you_want_to_uninstall": {
+      "message": "您确定要删除选中的应用程序吗？"
+   },
+   "back": {
+      "message": "返回"
+   },
+   "back_to_dials": {
+      "message": "返回快速拨号"
+   },
+   "background_color": {
+      "message": "背景色"
+   },
+   "bottom": {
+      "message": "底部"
+   },
+   "cancel": {
+      "message": "取消"
+   },
+   "center": {
+      "message": "居中对齐"
+   },
+   "clear": {
+      "message": "清空"
+   },
+   "color": {
+      "message": "颜色"
+   },
+   "coming_soon": {
+      "message": "即将到来"
+   },
+   "custom": {
+      "message": "自定义"
+   },
+   "dark": {
+      "message": "深色"
+   },
+   "default": {
+      "message": "默认"
+   },
+   "delete": {
+      "message": "删除"
+   },
+   "disabled": {
+      "message": "选项"
+   },
+   "edit": {
+      "message": "编辑"
+   },
+   "help": {
+      "message": "帮助"
+   },
+   "help_features": {
+      "message": "展示扩展的功能！"
+   },
+   "help_help": {
+      "message": "帮助"
+   },
+   "help_show_online_help": {
+      "message": "显示在线帮助"
+   },
+   "help_take_tour": {
+      "message": "Take the tour!"
+   },
+   "help_take_tour_help": {
+      "message": "请用一点时间来了解下扩展的基本说明。\u003Cbr />这将帮助您了解它的功能并让您根据您的喜好轻松的自定义快速拨号！"
+   },
+   "help_tour": {
+      "message": "漫游 Speed Dial 2 中文版！"
+   },
+   "high": {
+      "message": "高"
+   },
+   "large": {
+      "message": "大"
+   },
+   "left": {
+      "message": "左对齐"
+   },
+   "light": {
+      "message": "浅色"
+   },
+   "low": {
+      "message": "低"
+   },
+   "medium": {
+      "message": "中"
+   },
+   "name": {
+      "message": "名称"
+   },
+   "new_tab_add_dial_error": {
+      "message": "请完成所有必填项。"
+   },
+   "new_tab_dial_saved": {
+      "message": "书签已保存。"
+   },
+   "new_tab_enter_group_name": {
+      "message": "请输入一个新的群组名称"
+   },
+   "new_tab_group_edited": {
+      "message": "群组已更新。"
+   },
+   "new_tab_group_removed": {
+      "message": "群组已移除。"
+   },
+   "newtab_add_dial": {
+      "message": "添加拨号"
+   },
+   "newtab_add_new_dial": {
+      "message": "添加新拨号"
+   },
+   "newtab_app_launch": {
+      "message": "运行应用程序"
+   },
+   "newtab_clear_results": {
+      "message": "清空结果"
+   },
+   "newtab_create_group": {
+      "message": "创建群组"
+   },
+   "newtab_custom_logo": {
+      "message": "自定义LOGO地址"
+   },
+   "newtab_dial_aremove_warning": {
+      "message": "名称"
+   },
+   "newtab_dial_remove_warning": {
+      "message": "您确定要删除这个拨号吗？"
+   },
+   "newtab_edit_dial": {
+      "message": "编辑拨号"
+   },
+   "newtab_edit_group": {
+      "message": "编辑群组"
+   },
+   "newtab_group_name_and_color": {
+      "message": "群组名称 / 颜色"
+   },
+   "newtab_group_remove_warning": {
+      "message": "该操作将会删除群组内所有的拨号。\u003Cbr />您确定要继续吗？"
+   },
+   "newtab_homegroup": {
+      "message": "这是您的默认群组"
+   },
+   "newtab_new_tab": {
+      "message": "新标签页"
+   },
+   "newtab_open_all_links": {
+      "message": "打开所有链接"
+   },
+   "newtab_open_in_new_tab": {
+      "message": "在新标签页中打开链接"
+   },
+   "newtab_predefined_logo": {
+      "message": "候选LOGO"
+   },
+   "newtab_reload_thumbnail": {
+      "message": "刷新缩略图"
+   },
+   "newtab_remove_group": {
+      "message": "移除群组"
+   },
+   "newtab_remove_question": {
+      "message": "移除？"
+   },
+   "newtab_search_your_history": {
+      "message": "搜索历史纪录"
+   },
+   "newtab_select_logo": {
+      "message": "或者从候选LOGO中选择"
+   },
+   "no_title": {
+      "message": "无标题"
+   },
+   "none": {
+      "message": "无"
+   },
+   "options": {
+      "message": "选项"
+   },
+   "options_apps_about": {
+      "message": "了解更多关于"
+   },
+   "options_apps_icon_size": {
+      "message": "图标尺寸"
+   },
+   "options_apps_icons_only": {
+      "message": "只显示图标"
+   },
+   "options_apps_panel_position": {
+      "message": "面板位置"
+   },
+   "options_apps_panel_theme": {
+      "message": "面板主题"
+   },
+   "options_apps_show_panel": {
+      "message": "显示应用程序面板？"
+   },
+   "options_apps_show_panel_help": {
+      "message": "您可以在独立的面板中显示您已安装的应用程序\u003Cbr />或者在侧边栏里以列表的方式显示（查看 \u003Ci>侧边栏\u003C/i> 部分）。"
+   },
+   "options_background_file_warning": {
+      "message": "因为Chrome特殊的本地文件处理方式，强烈不推荐使用这种方式。因为从您的电脑载入图片会导致 \u003Cb>更高的内存占用\u003C/b> (可能是上百MB的RAM) 并且会拖慢您的浏览器性能和Speed Dial 2所需的载入时间！我们推荐您使用一些图片存储服务，比如"
+   },
+   "options_background_image_service": {
+      "message": "您可以使用图片空间提供商，比如"
+   },
+   "options_background_leave_empty": {
+      "message": "不使用背景图片请留空"
+   },
+   "options_background_nav_file": {
+      "message": "文件"
+   },
+   "options_background_nav_image": {
+      "message": "背景图片"
+   },
+   "options_background_nav_patterns": {
+      "message": "背景图案"
+   },
+   "options_background_nav_url": {
+      "message": "自定义地址"
+   },
+   "options_background_patterns_from": {
+      "message": "所有这些漂亮的图案都是由"
+   },
+   "options_background_repeat": {
+      "message": "重复"
+   },
+   "options_background_repeat_no": {
+      "message": "不重复"
+   },
+   "options_background_repeat_x": {
+      "message": "水平重复"
+   },
+   "options_background_repeat_y": {
+      "message": "垂直重复"
+   },
+   "options_customize_background_color": {
+      "message": "背景色"
+   },
+   "options_customize_border_colors": {
+      "message": "边框色"
+   },
+   "options_customize_customize_colors": {
+      "message": "自定义颜色"
+   },
+   "options_customize_explain": {
+      "message": "属性说明"
+   },
+   "options_customize_font_face": {
+      "message": "字体"
+   },
+   "options_customize_font_size": {
+      "message": "字体尺寸"
+   },
+   "options_customize_font_style": {
+      "message": "字体样式"
+   },
+   "options_customize_font_style_bold": {
+      "message": "粗体"
+   },
+   "options_customize_font_style_bold_italic": {
+      "message": "粗斜体"
+   },
+   "options_customize_font_style_italic": {
+      "message": "斜体"
+   },
+   "options_customize_font_style_normal": {
+      "message": "正常"
+   },
+   "options_customize_inner_background_color": {
+      "message": "内部背景色"
+   },
+   "options_customize_no_shadow": {
+      "message": "无阴影"
+   },
+   "options_customize_padding": {
+      "message": "内边距"
+   },
+   "options_customize_preview": {
+      "message": "显示预览"
+   },
+   "options_customize_rounded_corners": {
+      "message": "圆角"
+   },
+   "options_customize_sample_title": {
+      "message": "标题"
+   },
+   "options_customize_shadow": {
+      "message": "阴影"
+   },
+   "options_customize_show_title": {
+      "message": "显示拨号标题？"
+   },
+   "options_customize_show_visits": {
+      "message": "显示访问次数？"
+   },
+   "options_customize_text_align": {
+      "message": "对齐方式"
+   },
+   "options_customize_title": {
+      "message": "标题"
+   },
+   "options_customize_title_color": {
+      "message": "标题颜色"
+   },
+   "options_customize_title_position": {
+      "message": "标题位置"
+   },
+   "options_customize_title_position_inside": {
+      "message": "内部"
+   },
+   "options_customize_title_position_outside": {
+      "message": "外部"
+   },
+   "options_enter_your": {
+      "message": "Enter your"
+   },
+   "options_export_export": {
+      "message": "导出设置"
+   },
+   "options_export_export_help": {
+      "message": "这部分允许您轻松的导入/导出您的拨号和设置到其他计算机。导出并备份您的设置请点 \u003Cb>导出设置\u003C/b> 按钮并复制所有生成的文本。"
+   },
+   "options_export_exported_settings": {
+      "message": "这些是您导出的设置"
+   },
+   "options_export_exported_settings_help": {
+      "message": "复制并在其他计算机通过“导入设置”按钮粘贴。"
+   },
+   "options_export_import": {
+      "message": "导入设置"
+   },
+   "options_export_import_help": {
+      "message": "导入您的设置，请点击 \u003Cb>导入设置\u003C/b> 按钮并粘贴您以前保存的文本。 注意：导入操作将覆盖您的拨号和已保存的选项。"
+   },
+   "options_export_paste": {
+      "message": "粘贴设置"
+   },
+   "options_export_paste_help": {
+      "message": "您以前通过“导出设置”按钮导出的。"
+   },
+   "options_export_warning": {
+      "message": "警告：本操作将覆盖您的拨号和已保存的选项。如果你是一名Pro用户，群组和书签将替代我们服务器上的数据。您确定继续吗？"
+   },
+   "options_nav_apps": {
+      "message": "应用程序"
+   },
+   "options_nav_background": {
+      "message": "主题"
+   },
+   "options_nav_backup": {
+      "message": "导入/导出"
+   },
+   "options_nav_changelog": {
+      "message": "更新记录"
+   },
+   "options_nav_customize": {
+      "message": "自定义拨号样式"
+   },
+   "options_nav_options": {
+      "message": "拨号选项"
+   },
+   "options_nav_sidebar": {
+      "message": "侧边栏"
+   },
+   "options_nav_sync": {
+      "message": "同步与备份"
+   },
+   "options_options": {
+      "message": "选项"
+   },
+   "options_options_advanced_options": {
+      "message": "高级选项"
+   },
+   "options_options_center_vertically": {
+      "message": "垂直居中行？"
+   },
+   "options_options_columns": {
+      "message": "列数"
+   },
+   "options_options_columns_help": {
+      "message": "Number of dials to be shown in one row. Number of rows is calculated automatically according to overal number of saved dials."
+   },
+   "options_options_columns_in_a_row": {
+      "message": "in a row"
+   },
+   "options_options_custom_ratio": {
+      "message": "自定义缩略图比例"
+   },
+   "options_options_default_group_name": {
+      "message": "默认群组的名称"
+   },
+   "options_options_fit_logos": {
+      "message": "的可用宽度"
+   },
+   "options_options_fit_logos_dont_resize": {
+      "message": "按原图大小填充"
+   },
+   "options_options_fit_logos_fit": {
+      "message": "填充满缩略图区域（默认）"
+   },
+   "options_options_fit_logos_fit_and_center": {
+      "message": "按100%宽度填充并垂直居中"
+   },
+   "options_options_fit_logos_fit_width": {
+      "message": "按100%宽度填充"
+   },
+   "options_options_highlight_pages": {
+      "message": "突出显示最常访问的拨号？"
+   },
+   "options_options_highlight_pages_help": {
+      "message": "Speed Dial 2 将追踪您每天的访问习惯并记录您上午、中午、下午和晚上访问的页面。开启该选项后，您会在当前时段经常访问的三个拨号上看到一个红色的折角。"
+   },
+   "options_options_modify_width": {
+      "message": "宽度设置"
+   },
+   "options_options_modify_width_screen": {
+      "message": "的可用宽度"
+   },
+   "options_options_open_in_new_tab": {
+      "message": "在新标签页中打开链接？"
+   },
+   "options_options_open_in_new_tab_help": {
+      "message": "Turn on to open all links in new tab. If turned on, middle click or Ctrl+click will open links in current tab instead of new tab."
+   },
+   "options_options_order_dials": {
+      "message": "Order by"
+   },
+   "options_options_order_dials_help": {
+      "message": "Dials can be ordered automatically by number of visits or by your own manual order. If you choose to order pages manually, you can drag them to change their position."
+   },
+   "options_options_order_manual": {
+      "message": "手动排序"
+   },
+   "options_options_order_most_visited": {
+      "message": "按访问次数排序"
+   },
+   "options_options_plus_button_button": {
+      "message": "按钮"
+   },
+   "options_options_plus_button_show": {
+      "message": "显示"
+   },
+   "options_options_refresh_thumbnail": {
+      "message": "刷新缩略图"
+   },
+   "options_options_refresh_thumbnail_disabled": {
+      "message": "禁用（默认）"
+   },
+   "options_options_remember_group": {
+      "message": "记住激活的群组"
+   },
+   "options_options_remember_group_help": {
+      "message": "一个用来在运行时记住和打开最后一次打开的群组的选项。"
+   },
+   "options_options_scroll_layout": {
+      "message": "滚动布局"
+   },
+   "options_options_scroll_layout_help": {
+      "message": "无限滚动拨号替代适应屏幕。"
+   },
+   "options_options_spacing": {
+      "message": "拨号间距"
+   },
+   "options_options_thumbnail_quality": {
+      "message": "缩略图质量"
+   },
+   "options_options_thumbnail_quality_help": {
+      "message": "我们建议如果拨号数量小于10选择高品质，10-20之间选择中等品质，超过20个拨号选择低品质。\u003Cb>请注意 缩略图品质会影响新标签的载入时间。\u003C/b>"
+   },
+   "options_pagetitle": {
+      "message": "新标签页 - 选项"
+   },
+   "options_save": {
+      "message": "保存设置"
+   },
+   "options_sidebar_access_by": {
+      "message": "如何激活侧边栏？"
+   },
+   "options_sidebar_access_by_mouse": {
+      "message": "鼠标移至屏幕右侧"
+   },
+   "options_sidebar_access_by_scroll": {
+      "message": "鼠标滚轮向下滚动"
+   },
+   "options_sidebar_show_bookmarks": {
+      "message": "书签"
+   },
+   "options_sidebar_show_history": {
+      "message": "显示最近关闭的标签页？"
+   },
+   "options_sidebar_show_tags": {
+      "message": "总是显示标签"
+   },
+   "options_sidebar_use_shortcut": {
+      "message": "显示地址？"
+   },
+   "options_sidebar_use_sidebar": {
+      "message": "启用侧边栏？"
+   },
+   "options_sync": {
+      "message": "同步"
+   },
+   "options_sync_access_anywhere": {
+      "message": "Access your bookmarks from anywhere"
+   },
+   "options_sync_access_devices": {
+      "message": "Works with any mobile device - mobile phones and tablets"
+   },
+   "options_sync_access_devices_1": {
+      "message": "Works with mobile phones and tablets."
+   },
+   "options_sync_account_connected": {
+      "message": "You account is connected..."
+   },
+   "options_sync_become_pro": {
+      "message": "How to become a Pro"
+   },
+   "options_sync_become_pro_1": {
+      "message": "Create your account by visiting"
+   },
+   "options_sync_become_pro_2": {
+      "message": "Log in at"
+   },
+   "options_sync_become_pro_3": {
+      "message": "and pay for your Speed Dial 2 Pro with"
+   },
+   "options_sync_become_pro_4": {
+      "message": "Finally, enter your username \u003Cbr />and password at the top of this page."
+   },
+   "options_sync_connecting": {
+      "message": "Connecting to sync server..."
+   },
+   "options_sync_connection_error": {
+      "message": "There was an error while connecting to server"
+   },
+   "options_sync_create_account": {
+      "message": "Create account"
+   },
+   "options_sync_create_pro_account": {
+      "message": "Create Pro account"
+   },
+   "options_sync_enter_credentials": {
+      "message": "Enter username and password"
+   },
+   "options_sync_error": {
+      "message": "There was an error while importing your settings."
+   },
+   "options_sync_how_it_works": {
+      "message": "How does it work?"
+   },
+   "options_sync_how_it_works_1": {
+      "message": "With Speed Dial Pro, you bookmarks and settings are being automatically synchronized to our server"
+   },
+   "options_sync_how_it_works_2": {
+      "message": "This means your extension with all dials, groups and settings will be synchronized across different computers right after you provide you sync creditials (username and password). Synchronization with our server takes place every time you start a browser and any other changes (creating new bookmarks or group) are immediatelly replicated online."
+   },
+   "options_sync_importing": {
+      "message": "Importing your settings..."
+   },
+   "options_sync_lifetime_account": {
+      "message": "lifetime account"
+   },
+   "options_sync_love": {
+      "message": "If you like Speed Dial 2, you’ll \u003Cspan>\u003Cb>love\u003C/b>\u003C/span> to have it in your pocket!"
+   },
+   "options_sync_my_bookmarks": {
+      "message": "My bookmarks"
+   },
+   "options_sync_not_active": {
+      "message": "Your sync account is not active. Please log in to activate it."
+   },
+   "options_sync_online_access": {
+      "message": "Mobile / online access"
+   },
+   "options_sync_online_access_1": {
+      "message": "Since your groups and bookmarks will be available online, you can access them from any other browser or mobile device by logging in at"
+   },
+   "options_sync_online_access_2": {
+      "message": "They're optimized to be viewed on mobile devices and tablets as well as desktop computers. To quickly access your bookmarks from your mobile device, set Speed Dial 2 as a homepage or pin it as a bookmark on your Homescreen."
+   },
+   "options_sync_password": {
+      "message": "Password"
+   },
+   "options_sync_reset_password": {
+      "message": "Reset password"
+   },
+   "options_sync_synchronization": {
+      "message": "Synchronization"
+   },
+   "options_sync_to_phone": {
+      "message": "Synchronize to your phone"
+   },
+   "options_sync_username": {
+      "message": "Sync username"
+   },
+   "options_sync_wait": {
+      "message": "Please wait for synchronization to complete..."
+   },
+   "options_sync_wrong_email": {
+      "message": "Wrong username, e-mail or password"
+   },
+   "or": {
+      "message": "或"
+   },
+   "position": {
+      "message": "位置"
+   },
+   "read_more": {
+      "message": "了解更多"
+   },
+   "recently_closed_tabs": {
+      "message": "最近关闭的标签页"
+   },
+   "remove": {
+      "message": "删除"
+   },
+   "repeat": {
+      "message": "重复"
+   },
+   "reset_to_default": {
+      "message": "重置为默认"
+   },
+   "right": {
+      "message": "右对齐"
+   },
+   "search": {
+      "message": "搜索"
+   },
+   "sidebar_applications": {
+      "message": "应用程序"
+   },
+   "sidebar_bookmarks": {
+      "message": "书签"
+   },
+   "sidebar_clear_list": {
+      "message": "清空列表."
+   },
+   "sidebar_delicious_bookmarks": {
+      "message": "Delicious"
+   },
+   "sidebar_delicious_last25_bookmarks": {
+      "message": "显示最近保存的书签"
+   },
+   "sidebar_google_bookmarks": {
+      "message": "Google 书签"
+   },
+   "small": {
+      "message": "Small"
+   },
+   "statistics": {
+      "message": "统计"
+   },
+   "statistics_afternoon": {
+      "message": "中午"
+   },
+   "statistics_evening": {
+      "message": "下午"
+   },
+   "statistics_loading_message": {
+      "message": "请稍等，我们正在分析您的浏览历史..."
+   },
+   "statistics_morning": {
+      "message": "上午"
+   },
+   "statistics_most_visited_history": {
+      "message": "访问最多的页面 (浏览器历史记录)"
+   },
+   "statistics_most_visited_sd2": {
+      "message": "访问最多的页面 (快速拨号)"
+   },
+   "statistics_night": {
+      "message": "晚上"
+   },
+   "statistics_overall": {
+      "message": "所有"
+   },
+   "statistics_pagetitle": {
+      "message": "Speed dial 2 中文版 - 统计"
+   },
+   "statistics_statistics": {
+      "message": "统计"
+   },
+   "tip": {
+      "message": "提示"
+   },
+   "title": {
+      "message": "标题"
+   },
+   "top": {
+      "message": "Top"
+   },
+   "transparent": {
+      "message": "透明"
+   },
+   "uninstall": {
+      "message": "卸载"
+   },
+   "url": {
+      "message": "地址"
+   },
+   "visits": {
+      "message": "次访问"
+   },
+   "warning": {
+      "message": "警告"
+   },
+   "welcome_10_1": {
+      "message": "根据您的浏览记录，这是推荐添加的网站列表。\u003Cbr>\u003Cb>选择你希望添加到快速拨号的网站\u003C/b> 并点击完成。"
+   },
+   "welcome_10_h1": {
+      "message": "为你推荐"
+   },
+   "welcome_1_1": {
+      "message": "在过去的 3 年中，我们一直在为 \u003Cb>精心制作一个完美的新标签页\u003C/b> 而努力 — 通过倾听用户需求，并保持初心。"
+   },
+   "welcome_1_2": {
+      "message": "我们邀请你花一点时间来了解下扩展的功能特性。 \u003Cbr /> 这将有助于你更轻松的上手使用！"
+   },
+   "welcome_1_h1": {
+      "message": " 欢迎使用 Speed Dial 2 中文版！"
+   },
+   "welcome_2_1": {
+      "message": "我们的扩展全部围绕着 \u003Cb>拨号\u003C/b> \u003Cb> - 最爱网站的可视化书签。\u003C/b>"
+   },
+   "welcome_2_2": {
+      "message": "和默认的新标签页不同，Speed Dial 2 允许你添加无限多的拨号，甚至将他们进行编组。"
+   },
+   "welcome_2_h1": {
+      "message": "拨号 - 你最爱的网站"
+   },
+   "welcome_3_1": {
+      "message": "创建新拨号只需一次点击"
+   },
+   "welcome_3_2": {
+      "message": "在新标签页点击 (+) 按钮 \u003Cbr> 或者在浏览时点击浏览器的工具栏按钮立即保存当前页。"
+   },
+   "welcome_3_h1": {
+      "message": "创建新拨号"
+   },
+   "welcome_4_1": {
+      "message": "右键一个拨号来修改其设置。"
+   },
+   "welcome_4_h1": {
+      "message": "编辑拨号"
+   },
+   "welcome_6_1": {
+      "message": "侧边栏是我们扩展中的一个特殊功能 - 它可以显示您的 \u003Cb>最近关闭的标签页\u003C/b>，已安装的应用 \u003Cb>应用\u003C/b> 列表，你的 Chrome 浏览器 \u003Cb>书签\u003C/b> 甚至是来自 \u003Ca>delicious.com\u003C/a> 的书签 - 您可以在选项里指定打开/关闭侧边栏功能。移动你的鼠标到屏幕右侧来打开侧边栏。"
+   },
+   "welcome_6_h1": {
+      "message": "侧边栏"
+   },
+   "welcome_7_1": {
+      "message": "Speed Dial 2 为你如何度过一天提供了有用的信息 - 它会显示你在上午、中午或下午最常访问的网站，帮助你了解自己的兴趣所在。"
+   },
+   "welcome_7_h1": {
+      "message": "了解你的一天"
+   },
+   "welcome_9_1": {
+      "message": "通过来自世界各地的设计师创建的漂亮的 \u003Cb>预置主题\u003C/b> 自定义你的新标签页。"
+   },
+   "welcome_9_h1": {
+      "message": "用漂亮的主题自定义新标签页！"
+   },
+   "welcome_back": {
+      "message": "返回"
+   },
+   "welcome_continue": {
+      "message": "继续"
+   },
+   "welcome_finish": {
+      "message": "完成"
+   },
+   "welcome_follow_1": {
+      "message": "@virae"
+   },
+   "welcome_pagetitle": {
+      "message": "Speed dial 2 中文版 - 欢迎使用"
+   },
+   "welcome_skip_the_tour": {
+      "message": "跳过"
+   }
+}

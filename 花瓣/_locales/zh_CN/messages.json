@@ -1,0 +1,137 @@
+{
+   "about": {
+      "message": "关于花瓣网"
+   },
+   "access_denied": {
+      "message": "访问被拒绝"
+   },
+   "arrow": {
+      "message": "箭头"
+   },
+   "authorization": {
+      "message": "授权"
+   },
+   "blur": {
+      "message": "模糊"
+   },
+   "cancel": {
+      "message": "取消"
+   },
+   "captureArea": {
+      "message": "选择区域截图"
+   },
+   "captureFullpage": {
+      "message": "整张网页截图"
+   },
+   "captureViewport": {
+      "message": "可视区域截图"
+   },
+   "color": {
+      "message": "颜色"
+   },
+   "crop": {
+      "message": "裁剪"
+   },
+   "editPageTitle": {
+      "message": "网页截图采集到花瓣"
+   },
+   "ellipse": {
+      "message": "圆"
+   },
+   "extDescription": {
+      "message": "这个扩展程序可以让你方便地从任意网站上采集喜欢的图片、视频或者网页截图到花瓣网(huaban.com)上。这是花瓣网官方(huaban.com)提供的扩展。"
+   },
+   "extName": {
+      "message": "花瓣网页收藏工具"
+   },
+   "feedback": {
+      "message": "反馈建议"
+   },
+   "feedbackText": {
+      "message": "对这个插件不满意吗？点击这里给我们一些建议吧"
+   },
+   "hidePinButton": {
+      "message": "隐藏"
+   },
+   "hideShortcut": {
+      "message": "关闭截图快捷键"
+   },
+   "http_413": {
+      "message": "图片太大"
+   },
+   "invalid_grant": {
+      "message": "无效的授权"
+   },
+   "line": {
+      "message": "直线"
+   },
+   "minImageSide": {
+      "message": "图片最小边长"
+   },
+   "network_err": {
+      "message": "网络错误"
+   },
+   "ok": {
+      "message": "确定"
+   },
+   "pinAllText": {
+      "message": "采集图片/视频"
+   },
+   "preferences": {
+      "message": "选项"
+   },
+   "radius_rect": {
+      "message": "圆角矩形"
+   },
+   "rect": {
+      "message": "矩形"
+   },
+   "remove_auth": {
+      "message": "移除授权"
+   },
+   "save": {
+      "message": "保存到本地"
+   },
+   "shoppingName": {
+      "message": "花瓣礼物"
+   },
+   "shortcutSetting": {
+      "message": "快捷键设置"
+   },
+   "showPinButton": {
+      "message": "显示"
+   },
+   "showShortcut": {
+      "message": "开启截图快捷键"
+   },
+   "siteName": {
+      "message": "花瓣网"
+   },
+   "size_huge": {
+      "message": "特大"
+   },
+   "size_large": {
+      "message": "大"
+   },
+   "size_normal": {
+      "message": "正常"
+   },
+   "size_small": {
+      "message": "小"
+   },
+   "text": {
+      "message": "标注文字"
+   },
+   "toggleBtnText": {
+      "message": "显示采集按钮"
+   },
+   "undo": {
+      "message": "撤消"
+   },
+   "upload": {
+      "message": "采集到花瓣"
+   },
+   "visit": {
+      "message": "访问"
+   }
+}
